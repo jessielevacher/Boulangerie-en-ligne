@@ -31,5 +31,25 @@ date 1/05/2017 -->
       }
     }
 
+    public function getNumero() {
+      return $this->numeroCommande;
+    }
+
+    public function getDate() {
+      return $this->date;
+    }
+
+    public function getMoment() {
+      return $this->moment;
+    }
+
+    public function getTotal() {
+      return $this->prixTotal;
+    }
+
+    public function getListeArticlesCommandes() {
+      return $this->listeArticlesCommandes;
+    }
+
   }
 ?>

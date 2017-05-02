@@ -26,6 +26,7 @@ date 29/04/2017 -->
 				<th>Prix</th>
 				<th></th>
 			</tr>
+
 			<?php
 				$panier = new Panier();
 				$panier->afficherPanier();
@@ -68,7 +69,7 @@ date 29/04/2017 -->
 	<br/>
 	<input type="submit" name="action" value="commander"/>
 
-	<!-- <input type="reset" value="Effacer"/> retour -->
+	<a href="pagePrincipale.php"> <input type="button" value="Bouton"> </a>
 
 	</form>
 

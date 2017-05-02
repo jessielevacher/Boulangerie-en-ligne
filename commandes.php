@@ -7,7 +7,10 @@ date 1/05/2017 -->
 		<title>Vos commandes</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
-
+		<?php
+      require("Commande.class.php");
+      require("Client.class.php");
+    ?>
 	</head>
 
 	<body>
@@ -22,20 +25,17 @@ date 1/05/2017 -->
 				<th>N° commande</th>
 				<th>Date de réception</th>
 				<th>Articles</th>
+				<th>Total</th>
 			</tr>
 
+			<!-- Ce que doit afficher afficherCommandes()
+			<tr>
+				<td>302</td>
+				<td>31/05/17 au matin</td>
+				<td>3 croissant<br/> 1 baguette</td>
+			</tr> -->
 			<?php
-			echo "<tr>";
-				echo "<td>302</td>";
-				echo "<td>31/05/17 au matin</td>";
-				echo "<td>3 croissant<br/> 1 baguette</td>";
-			echo "</tr>";
-
-			echo "<tr>";
-			echo "	<td>302</td>";
-			echo "	<td>31/05/17 au matin</td>";
-			echo "	<td>3 croissant<br/> 1 baguette</td>";
-		echo "	</tr>";
+				$client->afficherCommandes();
 			?>
 		</table>
 
