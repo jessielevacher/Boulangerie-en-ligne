@@ -1,5 +1,11 @@
+@font-face { /* Définition d'une nouvelle police nommée LearningCurveProRegular */
+
+    font-family: 'LearningCurveProRegular';
+    src: url('learning_curve_regular_ot_tt.ttf') format('truetype'),
+}
+
 * {
-font-family :Arial , Helvetica , sans-serif ;
+font-family :Georgia, Arial , Helvetica , sans-serif ;
 }
 #logo {
 float : right ;
@@ -22,17 +28,22 @@ background-color : grey ;
 color : white ;
 }
 label {
+font-family: cursive;
 width : 150 px;
 display : block ;
 float : left ;
 }
-label.labelradio , label[for=copie] { 
+label.labelradio , label[for=copie] {
 display : inline ;
 float : none ;
 margin-right :20 px;
 }
-h1 {
+h1{
+font-family: 'Lobster Two', cursive;
+font-style: : oblique;
 font-size :24 px;
+text-align: center;
+color: pink;
 }
 input[type=submit],input[type=reset]{
 background-color : green ;
@@ -40,4 +51,23 @@ color : white ;
 margin-top : 20 px;
 font-size :16 px;
 weight : bold
+}
+
+body{
+background-color: #FEFEFE;
+ background-repeat: no-repeat;
+}
+nav{
+
+}
+footer{
+  font-family: cursive, Arial;
+  font-size: 10 px;
+  text-align: bottom center;
+  color: pink;
+}
+#barre_menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
