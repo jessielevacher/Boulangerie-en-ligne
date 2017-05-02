@@ -9,6 +9,7 @@ date 1/05/2017 -->
     protected $date;
     protected $moment;
     protected $prixTotal;
+    protected $listeArticlesCommandes;
 
     public function __construct($panier, $jour, $mois, $annee, $moment) {
       $alphabet="0123456789abcdefghijklmnopqrstuvwxyz";
@@ -16,9 +17,18 @@ date 1/05/2017 -->
       for($i=0; $i < 10; $i++)
 	       $num=$num.$alphabet[rand(0,35)];
       $this->numeroCommande = $num;
+
       $this->date = [$jour,$mois,$annee];
       $this->moment = $moment;
       $this->prixTotal = $panier->getTotal();
+
+      $nbArticles = 0;
+      for ($i=0; $i < count($panier->listeArticles); $i++) {
+        if ($panier->listeArticles[$i]->getQuantite()!=0) {
+          $this->listeArticlesCommandes[$nbArticles] = $panier->listeArticles[$i];
+          $nbArticles++;
+        }
+      }
     }
 
   }

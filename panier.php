@@ -68,7 +68,7 @@ date 29/04/2017 -->
 	<br/>
 	<input type="submit" name="action" value="commander"/>
 
-	<!-- <input type="reset" value="Effacer"/> retour--> 
+	<!-- <input type="reset" value="Effacer"/> retour -->
 
 	</form>
 
