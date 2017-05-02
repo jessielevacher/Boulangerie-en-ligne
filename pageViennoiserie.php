@@ -13,6 +13,19 @@
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
     Bienvenue sur la page des pains et viennoiseries.
 		</header>
-  </body>
+	<table>
+			<tr>
+				<th>Nos Pains</th>
+				<th>Prix</th>
+				<th>Quantité</th>
+			</tr>
+		for($i=0;$i<count();i++){
+					  echo "<tr>";
+					  echo "<td> $this->listeArticles[$i]->getNom() </td>";
+					  echo "<td> $this->listeArticles[$i]->getPrix() </td>" ;
+					  echo"</tr>";
+					  }
+	</table>
+	</body>
 
 </html>
