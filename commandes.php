@@ -25,6 +25,7 @@ date 1/05/2017 -->
 				<th>N° commande</th>
 				<th>Date de réception</th>
 				<th>Articles</th>
+				<th>Total</th>
 			</tr>
 
 			<!-- Ce que doit afficher afficherCommandes()

@@ -37,7 +37,12 @@ date 1/05/2017 -->
         echo "<tr>";
         echo "<td> $this->listeCommandes[$i]->getNumero() </td>";
         echo "<td> $this->listeCommandes[$i]->getDate()"." / "."$this->listeCommandes[$i]->getMoment() </td>";
-        //echo "<td> </td>"; liste des articles
+        echo "<td> "
+          for ($j=0; $j < count($this->listeCommandes[$j]->getListeArticlesCommandes()) ; $j++) {
+            echo "$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite() "."$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom() <br/>";
+          }
+        echo " </td>";
+        echo "<td> $this->listeCommandes[$i]->getTotal() </td>";
         echo "</tr>";
       }
     }
