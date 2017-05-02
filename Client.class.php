@@ -36,7 +36,7 @@ date 1/05/2017 -->
       for ($i=0; $i < count($this->listeCommandes); $i++) {
         echo "<tr>";
         echo "<td> $this->listeCommandes[$i]->getNumero() </td>";
-        echo "<td> $this->listeCommandes[$i]->getDate()." / ".$this->listeCommandes[$i]->getMoment() </td>";
+        echo "<td> $this->listeCommandes[$i]->getDate()"." / "."$this->listeCommandes[$i]->getMoment() </td>";
         //echo "<td> </td>"; liste des articles
         echo "</tr>";
       }

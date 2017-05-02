@@ -27,6 +27,7 @@ date 29/04/2017 -->
 				<th></th>
 			</tr>
 			<?php
+				$panier = new Panier();
 				$panier->afficherPanier();
 			?>
 		</table>
@@ -64,10 +65,10 @@ date 29/04/2017 -->
   <br/>
   <input type="radio" id="matin" name="moment" value="matin" /> <label class="labelradio" for="matin "> matin </label>
   <input type="radio" id="après-midi" name="moment" value="après-midi" /> <label class="labelradio" for="après-midi "> après-midi </label>
-
+	<br/>
 	<input type="submit" name="action" value="commander"/>
 
-	<input type="reset" value="Effacer"/>
+	<!-- <input type="reset" value="Effacer"/> retour--> 
 
 	</form>
 
