@@ -13,9 +13,9 @@ date 29/04/2017 -->
       //baguette;0;image1;0.92
       //pain au chocolat;0;image2;0.75
       $i = 0;
-      $fichier = fopen ("articles.txt", "r");
+      $fichier = fopen ("Fichiers/articles.txt", "r");
     	while (! feof ($fichier)) {
-    		$c = fgetc ($fichier);
+    		$c = fgets ($fichier);
         $Champ = explode(";",$c);
         $article = new Article($Champ[0],intval($Champ[1]),$Champ[2],floatval($Champ[3]));
     		$this->listeArticles[$i] = $article;
@@ -71,8 +71,8 @@ date 29/04/2017 -->
       for ($i=0; $i < count($this->listeArticles); $i++) {
         if ($this->listeArticles[$i]->getQuantite()!=0) {
           echo "<tr>";
-          echo "<td> $this->listeArticles[$i]->getNom() </td>";
-          echo "<td> $this->listeArticles[$i]->getQuantite() </td>";
+          echo "<td>".$this->listeArticles[$i]->getNom()."</td>";
+          echo "<td>".$this->listeArticles[$i]->getQuantite()."</td>";
           $prix = $this->listeArticles[$i]->getQuantite()*$this->listeArticles[$i]->getPrix();
           echo "<td> $prix </td>";
           $this->total = $this->total + $prix;
