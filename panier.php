@@ -38,6 +38,7 @@ date 29/04/2017 -->
 
   <?php
     echo "<SELECT name='jour' id='jour'>";
+		echo "<option selected disabled>Jour</option>";
 			//Lister les jours
 			for($jour=1; $jour<=31;$jour++){
 				//Lister les jours pour pouvoir leur ajouter un 0 devant
@@ -47,6 +48,7 @@ date 29/04/2017 -->
     echo "</SELECT>";
 
     echo '<SELECT name="mois" id="mois">';
+		echo "<option selected disabled>Mois</option>";
 			//Lister les mois
  			for($mois=1; $mois<=12;$mois++){
 				//Lister les jours pour pouvoir leur ajouter un 0 devant
@@ -58,6 +60,7 @@ date 29/04/2017 -->
     $date = date('Y'); //On prend l'année en cours
 
     echo '<SELECT name="annee" id="annee">';
+		echo "<option selected disabled>Année</option>";
 			//De l'année actuelle à l'année 2022
 			for ($annee=$date; $annee<=$date+5; $annee++)
 				echo "<OPTION><br>$annee<br></OPTION>";
