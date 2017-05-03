@@ -74,17 +74,15 @@ date 29/04/2017 -->
           echo "<td>".$this->listeArticles[$i]->getNom()."</td>";
           echo "<td>".$this->listeArticles[$i]->getQuantite()."</td>";
           $prix = $this->listeArticles[$i]->getQuantite()*$this->listeArticles[$i]->getPrix();
-          echo "<td> $prix </td>";
+          echo "<td> $prix €</td>";
           $this->total = $this->total + $prix;
           echo "<td><input type=\"reset\" name=\"strval($i)\" value=\"Supprimer\"/></td>";
           echo "</tr>";
         }
       }
       echo "<tr>";
-      echo "<td></td>";
-      echo "<td></td>";
-      echo "<td>Total</td>";
-      echo "<td> $this->total </td>";
+      echo "<td colspan="3">Total</td>";
+      echo "<td> $this->total €</td>";
       echo "</tr>";
     }
   }

@@ -34,28 +34,32 @@ display : block ;
 float : left ;
 }
 label.labelradio , label[for=copie] {
+font-family: Comic Sans MS;
 display : inline ;
 float : none ;
 margin-right :20 px;
 }
 h1{
-font-family: 'Lobster Two', cursive;
-font-style: : oblique;
-font-size :24 px;
-text-align: center;
-color: pink;
+  font-family: 'Lobster Two', cursive;
+  font-style: : oblique;
+  font-size : 24 px;
+  text-align: center;
+  color: pink;
 }
-input[type=submit],input[type=reset]{
-background-color : green ;
-color : white ;
-margin-top : 20 px;
-font-size :16 px;
-weight : bold
+input[type=submit],input[type=reset],input[type=button]{
+  font-family: Comic Sans MS;
+  background-color : #696969 ;
+  color : white ;
+  margin-top : 20 px;
+  font-size :16 px;
+  weight : bold;
+  border-radius: 8px;
 }
 
 body{
-background-color: #FEFEFE;
- background-repeat: no-repeat;
+  background-image:url("fond.jpg");
+  background-repeat: no-repeat;
+
 }
 nav{
 
@@ -70,4 +74,32 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+table {
+  border: medium solid #FF69B4;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+th {
+  font-family: Comic Sans MS;
+  font-size: large;
+  border: thin solid #D3D3D3;
+  width: 50%;
+  padding: 5px;
+  background-color: #FFB6C1;
+  background-image: url(sky.jpg);
+}
+td {
+  font-family: sans-serif;
+  border: thin solid #D3D3D3;
+  width: 50%;
+  padding: 5px;
+  text-align: center;
+  background-color: #FFFACD;
+}
+.centrage {
+  text-align: center;
 }

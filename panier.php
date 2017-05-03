@@ -14,7 +14,7 @@ date 29/04/2017 -->
 
 	<body>
 		<header id="top">
-			<img id="logo" src="CSS/ecureil.png" alt="ecureil" width= "75"  />
+			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
 		</header>
 
@@ -33,7 +33,8 @@ date 29/04/2017 -->
 			?>
 		</table>
 
-	<label for="date ">Date de réception de la commande (2 jours ouvrables) : </label>
+	<div class="centrage">
+	<label for="date " id="date">Date de réception de la commande (2 jours ouvrables) : </label>
 
   <?php
     echo "<SELECT name='jour' id='jour'>";
@@ -67,9 +68,10 @@ date 29/04/2017 -->
   <input type="radio" id="matin" name="moment" value="matin" /> <label class="labelradio" for="matin "> matin </label>
   <input type="radio" id="après-midi" name="moment" value="après-midi" /> <label class="labelradio" for="après-midi "> après-midi </label>
 	<br/>
-	<input type="submit" name="action" value="commander"/>
+	<input type="submit" name="action" value="Commander"/>
 
-	<a href="pagePrincipale.php"> <input type="button" value="Bouton"> </a>
+	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
+	</div>
 
 	</form>
 
