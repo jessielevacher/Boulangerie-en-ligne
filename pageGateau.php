@@ -4,6 +4,7 @@
 		<title>Page des gateaux !</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
 
 		?>

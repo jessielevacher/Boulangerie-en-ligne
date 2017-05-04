@@ -81,20 +81,14 @@ body.panier{
   background-repeat: no-repeat;
 
 }
-nav{
 
-}
-footer{
-  font-family: cursive, Arial;
-  font-size: 10 px;
-  text-align: bottom center;
-  color: pink;
-}
 #barre_menu{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  align-items : stretch;;
 }
+
 
 table.panier {
   border: medium solid #FF69B4;
@@ -146,4 +140,27 @@ margin-right:10px;
 }
 #d, #cp{
  width:45px;
+}
+.bouton{
+  width: 300px;
+  height: 50px;
+  text-decoration-style: none;
+}
+#images_produit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 200px;
+  background-color: #FFF0F5;
+}
+.images_produit{
+  border : 10px #C71585;
+  border-style: double;
+}
+.bouton{
+  text-decoration: none;
+}
+#tableau{
+display: flex;
+justify-content: space-around;
 }
