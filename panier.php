@@ -7,9 +7,7 @@ date 29/04/2017 -->
 		<title>Votre panier</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
-		<?php
-			require("Panier.class.php");
-		?>
+
 	</head>
 
 	<body>
@@ -19,19 +17,16 @@ date 29/04/2017 -->
 		</header>
 
 	<form action="traiterPanier.php" method="POST">
-		<table>
-			<tr> <!-- Titres colonnes -->
-				<th>Articles</th>
-				<th>Quantité</th>
-				<th>Prix</th>
-				<th></th>
+		<table class="panier">
+			<tr class="panier"> <!-- Titres colonnes -->
+				<th class="panier">Articles</th>
+				<th class="panier">Quantité</th>
+				<th class="panier">Prix</th>
+				<th class="panier"></th>
 			</tr>
 
-			<?php
-				$panier = new Panier();
-				$panier->afficherPanier();
-			?>
-		</table>
+
+		</table class="panier">
 
 	<div class="centrage">
 	<label for="date " id="date">Date de réception de la commande (2 jours ouvrables) : </label>

@@ -1,52 +1,78 @@
 <HTML>
 
+<head>
+	<title>Page d'inscription</title>
   <meta charset="UTF-8"/>
+  <link href="CSS/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
+</head>
 
+<body>
+	<br/>
+<header id="top">	
   <div>
   	<h1> Créez votre compte à la boulangerie "Les 5 gourmandes" </h1>
-  <div/>
+  </div>
+ </header>
 
-<form action ="traiterFormInscription.php" method ="POST">
-  <label for="n">nom</label>
-  <input type="text" name="nom" value="entrez votre nom" id="n">
-  <br/>
-  <label for="pr">prenom</label>
-  <input type="text" name="prenom" value="entrez votre prenom" id="pr">
-  <br/>
-  <label for="a">adresse</label>
-  <input type="text" name="adresse" value="entrez votre adresse" id="a">
-  <label for="v">ville</label>
+<form action ="traiterFormInscription.php" method ="POST" class="centerI">
+<table>
+  <tr>
+	  <td> <label for="n" class="inline">nom</label></td>
+	  <td> <input type="text" name="nom" value="" id="n"></td>
+  </tr>
+  <tr>
+	<td> <label for="pr" class="inline">prénom</label></td>
+	<td> <input type="text" name="prenom" value="" id="pr"></td>
+  </tr>
+  <tr>
+	<td> <label for="a" class="inline">adresse</label></td>
+	<td> <input type="text" name="adresse" value="" id="a">
+  <label for="v" class="inline">ville</label>
   <input type="text" name="ville" value="" id="v">
-  <label for="cp">CP</label>
-  <input type="text" name="cp" value="" id="cp">
+  <label for="cp" class="inline">CP</label>
+  <input type="text" name="cp" value="" id="cp"></td>
+  </tr>
+  <tr>
+	<td> <label for="t" class="inline">n° tél.</label></td>
+	<td> <input type="text" name="telephone" value="" id="t"></td>
+  </tr>
+</table>
   <br/>
-  <label for="t">n° tél.</label>
-  <input type="text" name="telephone" value="" id="t">
-  <br/>
-  <label for="d">date de naissance</label>
+  <label for="d" class="inline">date de naissance</label>
   <input type="text" name="jour" value="xx" id="d">
   /
     <input type="text" name="mois" value="xx" id="d">
     /
       <input type="text" name="annee" value="xxxx" id="d">
   <br/>
-  sexe <input type="radio" name="monSexe" id="homme" /><label for="H">Homme</label>
-  <input type="radio" name="monSexe" id="femme" /><label for="F">Femme</label><br/>
+  <label for="H" class="inline">sexe  </label>
+  <input type="radio" name="monSexe" id="H" /><label for="H" class="inline">Homme</label>
+  <input type="radio" name="monSexe" id="F" /><label for="F" class="inline">Femme</label><br/>
 
 
       <br/>
       <br/>
       <br/>
-  <label for="p">pseudo</label>
-  <input type="text" name="pseudo" value="" id="p">
-  <br/>
-  <label for="m">mot de passe</label>
-  <input type="text" name="mdp" value="" id="m">
-  <br/>
-  <label for="cm">confirmation mot de passe</label>
-  <input type="text" name="cmdp" value="" id="cm">
-  <br/>
+<table>
+  <tr>
+	  <td> <label for="p" class="inline">pseudo</label> </td>
+	  <td> <input type="text" name="pseudo" value="" id="p"> </td>
+  </tr>
+  <tr>
+	  <td> <label for="m" class="inline">mot de passe</label> </td>
+	  <td> <input type="password" name="mdp" value="" id="m"> </td>
+  </tr>
+  <tr>
+	  <td> <label for="cm" class="inline">confirmation mot de passe</label> </td>
+	  <td> <input type="password" name="cmdp" value="" id="cm"> </td>
+  </tr>
+  <tr>
+	  <td> </td> 
+    <td> <input class="button" type="submit" name="action" value="S'inscrire" id="connecter"/> </td>
+   </tr>
+</table>
 
-  <input class="button" type="submit" name="action" value="S'inscrire"/>
  </form>
+</body>
 <HTML>

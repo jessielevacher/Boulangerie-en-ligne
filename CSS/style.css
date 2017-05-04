@@ -31,8 +31,12 @@ label {
 font-family: cursive;
 width : 150 px;
 display : block ;
-float : left ;
+/*float : left ;*/
 }
+ label.inline {
+ display:inline;
+ margin-right:20px;
+ } 
 label.labelradio , label[for=copie] {
 font-family: Comic Sans MS;
 display : inline ;
@@ -40,20 +44,28 @@ float : none ;
 margin-right :20 px;
 }
 h1{
-  font-family: 'Lobster Two', cursive;
+  /*font-family: 'Lobster Two', cursive;
   font-style: : oblique;
   font-size : 24 px;
   text-align: center;
-  color: pink;
+  color: pink;*/
+  
+  text-align: center;
+margin-bottom:50px;
+
+font: 400 70px/0.8 'Great Vibes', Helvetica, sans-serif;
+color: rgb(210,60,150);
+text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
 }
 input[type=submit],input[type=reset],input[type=button]{
   font-family: Comic Sans MS;
-  background-color : #696969 ;
+  background-color : rgb(0, 150, 254) ;
   color : white ;
   margin-top : 20 px;
   font-size :16 px;
   weight : bold;
   border-radius: 8px;
+  
 }
 
 body{
@@ -76,14 +88,14 @@ footer{
   justify-content: space-around;
 }
 
-table {
+table.panier {
   border: medium solid #FF69B4;
   border-collapse: collapse;
   width: 50%;
   margin-left:auto;
   margin-right:auto;
 }
-th {
+th.panier {
   font-family: Comic Sans MS;
   font-size: large;
   border: thin solid #D3D3D3;
@@ -92,7 +104,7 @@ th {
   background-color: #FFB6C1;
   background-image: url(sky.jpg);
 }
-td {
+td.panier {
   font-family: sans-serif;
   border: thin solid #D3D3D3;
   width: 50%;
@@ -103,3 +115,29 @@ td {
 .centrage {
   text-align: center;
 }
+
+#connecter {  
+margin-top: 2%;
+margin-left:25px;
+}
+.centerC{  
+  margin-left:39%;
+  margin-top:90px;
+}
+.centerI{  
+  margin-left:39%;
+  margin-top:70px;
+}
+#imageConnexion{   
+	margin-left: 37%;
+	margin-right: 35%;
+	margin-top:80px;
+}
+input{   
+margin-right:10px;
+}
+#d, #cp{   
+ width:45px;
+}
+
+
