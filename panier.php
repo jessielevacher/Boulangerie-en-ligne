@@ -6,8 +6,16 @@ date 29/04/2017 -->
 	<head>
 		<title>Votre panier</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
-
+		<?php
+			require("Panier.class.php");
+			session_start();
+			$panier = new Panier();
+			$client = new Client();
+			$_SESSION['client']=$client;
+		  $_SESSION['panier']=$panier;
+		?>
 	</head>
 
 	<body>
@@ -25,8 +33,12 @@ date 29/04/2017 -->
 				<th class="panier"></th>
 			</tr>
 
+			<?php
 
-		</table class="panier">
+				$panier->afficherPanier();
+			?>
+
+		</table>
 
 	<div class="centrage">
 	<label for="date " id="date">Date de réception de la commande (2 jours ouvrables) : </label>

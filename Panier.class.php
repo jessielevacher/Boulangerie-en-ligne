@@ -51,8 +51,10 @@ date 29/04/2017 -->
       $this->listeArticles[$i]->setQuantite(0);
     }
 
-    public function reinitialiserPanier($i,$j) {
-
+    public function reinitialiserPanier($debut,$fin) {
+      for ($i=$debut; $i < $fin; $i++) {
+        $this->listeArticles[$i]->setQuantite(0);
+      }
     }
 
     public function panierVide() {
@@ -70,19 +72,19 @@ date 29/04/2017 -->
     public function afficherPanier() {
       for ($i=0; $i < count($this->listeArticles); $i++) {
         if ($this->listeArticles[$i]->getQuantite()!=0) {
-          echo "<tr>";
-          echo "<td>".$this->listeArticles[$i]->getNom()."</td>";
-          echo "<td>".$this->listeArticles[$i]->getQuantite()."</td>";
+          echo "<tr class=\"panier\">";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getQuantite()."</td>";
           $prix = $this->listeArticles[$i]->getQuantite()*$this->listeArticles[$i]->getPrix();
-          echo "<td> $prix €</td>";
+          echo "<td class=\"panier\">".$prix."€</td>";
           $this->total = $this->total + $prix;
-          echo "<td><input type=\"reset\" name=\"strval($i)\" value=\"Supprimer\"/></td>";
+          echo "<td class=\"panier\"><input type=\"submit\" name=\"strval($i)\" value=\"Supprimer\"/></td>";
           echo "</tr>";
         }
       }
       echo "<tr>";
-      echo "<td colspan="3">Total</td>";
-      echo "<td> $this->total €</td>";
+      echo "<td colspan=\"2\" class=\"panier\">Total</td>";
+      echo "<td colspan=\"2\" class=\"panier\">".$this->total."€ </td>";
       echo "</tr>";
     }
   }
