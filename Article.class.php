@@ -33,6 +33,8 @@ date 29/04/2017 -->
 
     public function getPrix() {
       return $this->prix;
-    }
+    }  
+    
+   
   }
 ?>

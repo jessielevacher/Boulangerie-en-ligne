@@ -15,15 +15,16 @@
   </div>
  </header>
 
-<form action ="traiterFormInscription.php" method ="POST" class="centerI">
-<table>
+<div class= "centrage">
+<form action ="traiterFormInscription.php" method ="POST" >
+<table class="connexion">
   <tr>
 	  <td> <label for="n" class="inline">nom</label></td>
-	  <td> <input type="text" name="nom" value="" id="n"></td>
+	  <td> <input type="text" name="nom" placeholder="entrez votre nom" id="n"></td>
   </tr>
   <tr>
 	<td> <label for="pr" class="inline">prénom</label></td>
-	<td> <input type="text" name="prenom" value="" id="pr"></td>
+	<td> <input type="text" name="prenom" placeholder="entrez votre prenom" id="pr"></td>
   </tr>
   <tr>
 	<td> <label for="a" class="inline">adresse</label></td>
@@ -40,28 +41,28 @@
 </table>
   <br/>
   <label for="d" class="inline">date de naissance</label>
-  <input type="text" name="jour" value="xx" id="d">
+  <input type="text" name="jour" placeholder="xx" id="d">
   /
-    <input type="text" name="mois" value="xx" id="d">
+    <input type="text" name="mois" placeholder="xx" id="d">
     /
-      <input type="text" name="annee" value="xxxx" id="d">
+      <input type="text" name="annee" placeholder="xxxx" id="d">
   <br/>
   <label for="H" class="inline">sexe  </label>
-  <input type="radio" name="monSexe" id="H" /><label for="H" class="inline">Homme</label>
-  <input type="radio" name="monSexe" id="F" /><label for="F" class="inline">Femme</label><br/>
+  <input type="radio" name="monSexe" id="H" value="homme"/><label for="H" class="inline">Homme</label>
+  <input type="radio" name="monSexe" id="F" value="femme"/><label for="F" class="inline">Femme</label><br/>
 
 
       <br/>
       <br/>
       <br/>
-<table>
+<table class="connexion">
   <tr>
 	  <td> <label for="p" class="inline">pseudo</label> </td>
 	  <td> <input type="text" name="pseudo" value="" id="p"> </td>
   </tr>
   <tr>
 	  <td> <label for="m" class="inline">mot de passe</label> </td>
-	  <td> <input type="password" name="mdp" value="" id="m"> </td>
+	  <td> <input type="password" name="mdp" placeholder="au  8 caractères dont 1 chiffre" id="m"> </td>
   </tr>
   <tr>
 	  <td> <label for="cm" class="inline">confirmation mot de passe</label> </td>
@@ -74,5 +75,6 @@
 </table>
 
  </form>
+<div/>
 </body>
 <HTML>

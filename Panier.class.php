@@ -79,5 +79,6 @@ date 29/04/2017 -->
       echo "<td colspan=\"2\" class=\"panier\">".$this->total."€ </td>";
       echo "</tr>";
     }
+
   }
 ?>

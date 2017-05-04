@@ -4,11 +4,11 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
   // recherche de l'utilisateur : dans fichier info.txt
 
 
-	$fichier = @fopen("info.txt", "r");
+	$fichier = @fopen("Fichiers/info.txt", "r");
 	$found=false;
 	
 	if ($fichier) {
-		$chaine = $_POST["pseudo"]." ".$_POST["mdp"];
+		$chaine = $_POST["pseudo"]." ".$_POST["mdp"]."\n";
 		while ( (($buffer = fgets($fichier)) !== false) && (!$found) ) {
 			if ($buffer==$chaine){
 				$found=true;
@@ -23,14 +23,14 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
  //après avoir vérifié que l'utilisateur peut se connecter, je garde les informations
  //que je vais utiliser dans les autres pages dans l'array  $_SESSION
    { 
-	 $_SESSION["pseudo"] = $_POST["pseudo"];
-	 header("Location: ./page_principale.html");
+	 $_SESSION["client"] = serialize($client);
+	 header("Location: ./pagePrincipale.php");
    }
     // header ("Location ...") rédirige le navigateur vers la page indiquée à partir du script
   else {header("Location: ./page_connexion.html");
 		} 
 }
   else 
-  	  {header("Location: ./page_connexion.html");
+  	  {header("Location: ./page_inscription.html");
   	  }
   ?>
