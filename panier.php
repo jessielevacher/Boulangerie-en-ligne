@@ -1,4 +1,4 @@
-<!-- author Jessie
+<!-- author Jessie & Laetitia
 date 29/04/2017 -->
 
 <!DOCTYPE html>
@@ -10,15 +10,14 @@ date 29/04/2017 -->
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<?php
 			require("Panier.class.php");
+			//require("Client.class.php");
 			session_start();
-			$panier = new Panier();
-			$client = new Client();
-			$_SESSION['client']=$client;
-		  $_SESSION['panier']=$panier;
+			$panier = $_SESSION['panier'];
+			//$client = $_SESSION['client'];
 		?>
 	</head>
 
-	<body>
+	<body class="panier">
 		<header id="top">
 			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>

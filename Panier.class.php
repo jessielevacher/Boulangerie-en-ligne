@@ -1,4 +1,4 @@
-<!-- author Jessie
+<!-- author Jessie & Laetitia
 date 29/04/2017 -->
 
 <?php
@@ -39,15 +39,6 @@ date 29/04/2017 -->
     }
 
     public function supprimerArticle($i) {
-      // $trouve = FALSE;
-      // $i = 0;
-      // while ($i < count($this->listeArticles) && $trouve == FALSE) {
-      //   if ($this->listeArticles[$i]->getNom()==$nom) {
-      //     $this->listeArticles[$i]->setQuantite(0);
-      //     $trouve = TRUE;
-      //   }
-      //   $i = $i + 1;
-      // }
       $this->listeArticles[$i]->setQuantite(0);
     }
 
@@ -70,6 +61,7 @@ date 29/04/2017 -->
     }
 
     public function afficherPanier() {
+      $this->total=0;
       for ($i=0; $i < count($this->listeArticles); $i++) {
         if ($this->listeArticles[$i]->getQuantite()!=0) {
           echo "<tr class=\"panier\">";
@@ -78,7 +70,7 @@ date 29/04/2017 -->
           $prix = $this->listeArticles[$i]->getQuantite()*$this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
           $this->total = $this->total + $prix;
-          echo "<td class=\"panier\"><input type=\"submit\" name=\"strval($i)\" value=\"Supprimer\"/></td>";
+          echo "<td class=\"panier\"><input type=\"submit\" name=\"".strval($i)."\" value=\"Supprimer\"/></td>";
           echo "</tr>";
         }
       }

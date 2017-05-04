@@ -36,7 +36,7 @@ display : block ;
  label.inline {
  display:inline;
  margin-right:20px;
- } 
+ }
 label.labelradio , label[for=copie] {
 font-family: Comic Sans MS;
 display : inline ;
@@ -49,7 +49,7 @@ h1{
   font-size : 24 px;
   text-align: center;
   color: pink;*/
-  
+
   text-align: center;
 margin-bottom:50px;
 
@@ -65,10 +65,18 @@ input[type=submit],input[type=reset],input[type=button]{
   font-size :16 px;
   weight : bold;
   border-radius: 8px;
-  
+
 }
 
-body{
+h2{
+  font-family: 'Lobster Two', cursive;
+  font-style: : oblique;
+  font-size : 24 px;
+  text-align: center;
+
+}
+
+body.panier{
   background-image:url("fond.jpg");
   background-repeat: no-repeat;
 
@@ -116,28 +124,26 @@ td.panier {
   text-align: center;
 }
 
-#connecter {  
+#connecter {
 margin-top: 2%;
 margin-left:25px;
 }
-.centerC{  
+.centerC{
   margin-left:39%;
   margin-top:90px;
 }
-.centerI{  
+.centerI{
   margin-left:39%;
   margin-top:70px;
 }
-#imageConnexion{   
+#imageConnexion{
 	margin-left: 37%;
 	margin-right: 35%;
 	margin-top:80px;
 }
-input{   
+input{
 margin-right:10px;
 }
-#d, #cp{   
+#d, #cp{
  width:45px;
 }
-
-
