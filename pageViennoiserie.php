@@ -6,26 +6,31 @@
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
-
+			require("Boulangerie.class.php");
+			require("Panier.class.php");
+			session_start();
+			$panier = $_SESSION['panier'];
+			$pain = ;
 		?>
 	</head>
-
-	<body>
+		
+<body class="viennoiserie">
+		<header id="top">
+			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
     Bienvenue sur la page des pains et viennoiseries.
 		</header>
-	<table>
-			<tr>
-				<th>Nos Pains</th>
-				<th>Prix</th>
-				<th>Quantité</th>
+		
+	<table class="viennoiserie">
+			<tr class="viennoiserie">
+				<th class="viennoiserie">Nos Pains</th>
+				<th class="viennoiserie">Prix</th>
+				<th class="viennoiserie">Quantité</th>
 			</tr>
-		for($i=0;$i<count();i++){
-					  echo "<tr>";
-					  echo "<td> $this->listeArticles[$i]->getNom() </td>";
-					  echo "<td> $this->listeArticles[$i]->getPrix() </td>" ;
-					  echo"</tr>";
-					  }
+		<?php
+				$pain->AffichageViennoiserie();
+		?>
+		
 	</table>
 	</body>
 
