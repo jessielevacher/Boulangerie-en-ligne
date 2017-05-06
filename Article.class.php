@@ -7,12 +7,14 @@ date 29/04/2017 -->
     protected $quantite;
     protected $image;
     protected $prix;
+    protected $classement;
 
-    public function __construct($nom, $quantite, $image, $prix) {
+    public function __construct($nom, $quantite, $image, $prix, $classement) {
       $this->nom = $nom;
       $this->quantite = $quantite;
       $this->image = $image;
       $this->prix = $prix;
+      $this->classement = $classement;
     }
 
     public function getNom() {
@@ -34,6 +36,10 @@ date 29/04/2017 -->
     public function getPrix() {
       return $this->prix;
     }  
+	  
+    public function getClassement(){
+      return $this->classement;
+    }
     
    
   }
