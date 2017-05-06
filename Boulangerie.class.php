@@ -25,6 +25,28 @@ date 1/05/2017 -->
       //On crée le panier de la boulangerie
       $panier = new Panier();
     }
+    
+    public function AffichageViennoiserie(){
+      for ($i=0; $i < count($this->listeArticles); $i++) {
+        if ($this->listeArticles[$i]->getClassement()=="viennoiserie") {
+          echo "<tr class=\"panier\">";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
+          $prix = $this->listeArticles[$i]->getPrix();
+          echo "<td class=\"panier\">".$prix."€</td>";
+          <!-- 
+            <td class=\"panier\">
+          echo '<SELECT name="quantite" id="quantite">';
+		        echo "<option selected disabled>Quantité</option>";
+		          	//Lister les quantités possible
+ 		        	for($quantite=1; $quantite<=50;$quantite++)
+			      	echo "<OPTION>$quantite<br></OPTION>";
+          echo "</SELECT>";
+          </td> 
+          -->
+          echo "</tr>";
+        }
+      }
+    }
 
   }
 ?>
