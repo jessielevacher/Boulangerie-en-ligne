@@ -17,7 +17,7 @@
 		<header id="top">
 			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
-    Bienvenue sur la page des pains et viennoiseries.
+    Bienvenue sur la page des gâteaux.
 		</header>
 	
 <form action="traiterArticles.php" method="POST">
