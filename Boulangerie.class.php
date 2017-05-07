@@ -33,7 +33,46 @@ date 1/05/2017 -->
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
-          echo  "<td class=\"panier\"><input type="number" name="quantité" min="1" max="50"></td>";
+          echo  "<td class=\"panier\"><input type="number" name="quantité" min="1" max="50" value="0"></td>";
+          echo "</tr>";
+        }
+      }
+    }
+    
+     public function AffichagePain(){
+      for ($i=0; $i < count($this->listeArticles); $i++) {
+        if ($this->listeArticles[$i]->getClassement()=="pain") {
+          echo "<tr class=\"panier\">";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
+          $prix = $this->listeArticles[$i]->getPrix();
+          echo "<td class=\"panier\">".$prix."€</td>";
+          echo  "<td class=\"panier\"><input type="number" name="quantité" min="1" max="50" value="0"></td>";
+          echo "</tr>";
+        }
+      }
+    }
+    
+     public function AffichageChocolat(){
+      for ($i=0; $i < count($this->listeArticles); $i++) {
+        if ($this->listeArticles[$i]->getClassement()=="autre") {
+          echo "<tr class=\"panier\">";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
+          $prix = $this->listeArticles[$i]->getPrix();
+          echo "<td class=\"panier\">".$prix."€</td>";
+          echo  "<td class=\"panier\"><input type="number" name="quantité" min="1" max="50" value="0"></td>";
+          echo "</tr>";
+        }
+      }
+    }
+    
+     public function AffichageGateau(){
+      for ($i=0; $i < count($this->listeArticles); $i++) {
+        if ($this->listeArticles[$i]->getClassement()=="gateau") {
+          echo "<tr class=\"panier\">";
+          echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
+          $prix = $this->listeArticles[$i]->getPrix();
+          echo "<td class=\"panier\">".$prix."€</td>";
+          echo  "<td class=\"panier\"><input type="number" name="quantité" min="1" max="50" value="0"></td>";
           echo "</tr>";
         }
       }
