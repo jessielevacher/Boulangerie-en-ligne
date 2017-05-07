@@ -37,8 +37,8 @@
 	<br/>
 	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
 	
-	<input type="submit" name="action" value="Valider"/>
-	<input type="submit" name="effacer" value="Effacer"/>
+	<input type="submit" name="actionG" value="Valider"/>
+	<input type="submit" name="effacerG" value="Effacer"/>
 	</div>
 </form>
 
