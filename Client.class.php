@@ -1,3 +1,5 @@
+<!-- author Jessie, Laetitia et Léa
+date 1/05/2017 -->
 
 <?php
   require("Commande.class.php");
@@ -14,55 +16,93 @@
     protected $telephone;
     protected $pseudo;
     protected $listeCommandes;
-    /* protected $panier; */
+    //protected $panier;
 
-    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone,$pseudo) {
-			
-		$this->nom=$nom;
-		$this->prenom=$prenom;
-		$this->dateNaissance=$dateNaissance;
-		$this->adresse=$adresse;
-		$this->CP=$CP;
-		$this->ville=$ville;
-		$this->sexe=$sexe;
-		$this->telephone=$telephone;
-		$this->pseudo=$pseudo;
-		$this->listeCommandes=array(); 
-		/* $this->panier=new Panier(); */
+    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo) {
+  		$this->nom = $nom;
+  		$this->prenom = $prenom;
+  		$this->dateNaissance = $dateNaissance;
+  		$this->adresse = $adresse;
+  		$this->CP = $CP;
+  		$this->ville = $ville;
+  		$this->sexe = $sexe;
+  		$this->telephone = $telephone;
+  		$this->pseudo = $pseudo;
+  		$this->listeCommandes = array();
+  		//$this->panier=new Panier();
     }
-    
-    public function __destruct(){}
+
+    public function __destruct() {}
+
+    public function getPrenom() {
+        return $this->prenom;
+    }
+
+    public function getNom() {
+      return $this->nom;
+    }
+
+    public function getDateDeNaissance() {
+      return $this->DateDeNaissance;
+    }
+
+    public function getAdresse() {
+      return $this->adresse;
+    }
+
+    public function getVille() {
+      return $this->ville;
+    }
+
+    public function getCP() {
+      return $this->CP;
+    }
+
+    public function getPseudo() {
+      return $this->pseudo;
+    }
+
+    public function getSexe() {
+      return $this->sexe;
+    }
+
+    public function getTelephone() {
+      return $this->telephone;
+    }
+
+    public function getListeCommandes() {
+      return $this->listeCommandes;
+    }
+
+    /* public function getPanier() {
+      return $this->panier;
+    } */
 
     public function enregistrerInfos($mdp) {
-
-	$fichier = @fopen("Fichiers/info.txt", "a+");
-	fputs($fichier, $this->pseudo." ".$mdp."\n"); 
-	fclose($fichier);
+      $fichier = @fopen("Fichiers/info.txt", "a+");
+	    fputs($fichier, $this->pseudo." ".$mdp."\n");
+	    fclose($fichier);
     }
 
     public function enregistrerInfosComplementaires() {
-		$fichier = @fopen("Fichiers/clients.txt", "a+");
-		fputs($fichier, $this->pseudo." ".serialize($this)."\n"); 
-		fclose($fichier);
+      $fichier = @fopen("Fichiers/clients.txt", "a+");
+      fputs($fichier, $this->pseudo." ".serialize($this)."\n");
+      fclose($fichier);
 		}
-    
-   
 
     public function recupererInfos(){
 
-       
     }
-    
-     
 
-/*
-    public function afficherCommandes() {
-      for ($i=0; $i < count($this->listeCommandes); $i++) {
+    //On affiche les commandes càd :
+    //numéro de la commande ; date ; moment ; liste des articles (quantité + nom du produit) ; prix total
+    /*public function afficherCommandes() {
+      for ($i = 0; $i < count($this->listeCommandes); $i++) {
         echo "<tr>";
         echo "<td>".$this->listeCommandes[$i]->getNumero()."</td>";
         echo "<td>".$this->listeCommandes[$i]->getDate()." / ".$this->listeCommandes[$i]->getMoment()."</td>";
         echo "<td>"
-          for ($j=0; $j < count($this->listeCommandes[$j]->getListeArticlesCommandes()) ; $j++) {
+          for ($j = 0; $j < count($this->listeCommandes[$j]->getListeArticlesCommandes()) ; $j++) {
             echo $this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
           }
         echo "</td>";
@@ -71,60 +111,9 @@
       }
     }
 
+    //On ajoute une commande à la liste des commandes
     public function ajouterCommande($commande) {
-      $this−>listeCommandes[count($this->listeCommandes)] = $commande;
-    }
-    
-*/   
-
-
- /* Getters */
- 
-	public function getPrenom() {
-      return $this->prenom;
-    }
-    
-    public function getNom() {
-      return $this->nom;
-    }
-    
-    public function getDateDeNaissance() {
-      return $this->DateDeNaissance;
-    }
-    
-    public function getAdresse() {
-      return $this->adresse;
-    }
-    
-    public function getVille() {
-      return $this->ville;
-    }
-    
-    public function getCP() {
-      return $this->CP;
-    }
-    
-    public function getPseudo() {
-      return $this->pseudo;
-    }
-    
-    public function getSexe() {
-      return $this->sexe;
-    }
-    
-    public function getTelephone() {
-      return $this->telephone;
-    }
-    
-    public function getListeCommandes() {
-      return $this->listeCommandes;
-    }
-    
-    /* public function getPanier() {
-      return $this->panier;
-    }
-    */
-  }
-    
-  
+      $this->listeCommandes[count($this->listeCommandes)] = $commande;
+    }*/
+}
 ?>

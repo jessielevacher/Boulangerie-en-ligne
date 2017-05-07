@@ -11,20 +11,23 @@ date 1/05/2017 -->
     protected $listeArticlesCommandes;
 
     public function __construct($panier, $jour, $mois, $annee, $moment) {
-
+      //On met un numéro de commande aléatoire = combinaison de 10 lettres et chiffres
       $alphabet="0123456789abcdefghijklmnopqrstuvwxyz";
       $num = '';
-      for($i=0; $i < 10; $i++)
+      for($i = 0; $i < 10; $i++)
 	       $num=$num.$alphabet[rand(0,35)];
       $this->numeroCommande = $num;
 
       $this->date = [$jour,$mois,$annee];
       $this->moment = $moment;
 
+      //On récupère le total du panier
       $this->prixTotal = $panier->getTotal();
 
+      //On remplit la liste des articles commandés avec les articles qui ont une quantité
+      //différente de 0 dans le panier
       $nbArticles = 0;
-      for ($i=0; $i < count($panier->getListeArticles()); $i++) {
+      for ($i = 0; $i < count($panier->getListeArticles()); $i++) {
         if ($panier->getListeArticles()[$i]->getQuantite()!=0) {
           $this->listeArticlesCommandes[$nbArticles] = $panier->getListeArticles()[$i];
           $nbArticles++;

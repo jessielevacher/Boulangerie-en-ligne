@@ -9,9 +9,10 @@ date 29/04/2017 -->
     protected $total;
 
     public function __construct() {
-      //Dans le fichier il faut écrire :
-      //baguette;0;image1;0.92
-      //pain au chocolat;0;image2;0.75
+      //Dans le fichier articles.txt il y a :
+      //nom du produit;quantité;chemin vers l'image;prix unitaire;catégorie
+
+      //On parcourt le fichier et on remplit la liste d'articles avec tous les produits
       $i = 0;
       $fichier = fopen ("Fichiers/articles.txt", "r");
     	while (! feof ($fichier)) {
@@ -38,16 +39,20 @@ date 29/04/2017 -->
 
     }
 
+    //On supprime le ième article de la liste
     public function supprimerArticle($i) {
       $this->listeArticles[$i]->setQuantite(0);
     }
 
+    //La quantité des articles de la liste compris entre $debut et $fin
+    //reprennent une quantité nulle
     public function reinitialiserPanier($debut,$fin) {
-      for ($i=$debut; $i < $fin; $i++) {
+      for ($i = $debut; $i < $fin; $i++) {
         $this->listeArticles[$i]->setQuantite(0);
       }
     }
 
+    //Retourne vrai si le panier est vide, faux sinon
     public function panierVide() {
       $vide = TRUE;
       $i = 0;
@@ -60,6 +65,10 @@ date 29/04/2017 -->
       return $vide;
     }
 
+    //On affiche le panier càd :
+    //nom du produit ; quantité ; prix (quantité * prix unitaire) ; bouton "supprimer"
+    // /!\ On n'affiche QUE les produits ayant une quantité différente de 0 !
+    //On affiche également le prix total du panier
     public function afficherPanier() {
       $this->total=0;
       for ($i=0; $i < count($this->listeArticles); $i++) {
