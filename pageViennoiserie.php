@@ -10,28 +10,49 @@
 			require("Panier.class.php");
 			session_start();
 			$panier = $_SESSION['panier'];
-			$pain = ;
 		?>
 	</head>
 		
-<body class="viennoiserie">
+<body class="article">
 		<header id="top">
 			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
     Bienvenue sur la page des pains et viennoiseries.
 		</header>
-		
-	<table class="viennoiserie">
-			<tr class="viennoiserie">
-				<th class="viennoiserie">Nos Pains</th>
-				<th class="viennoiserie">Prix</th>
-				<th class="viennoiserie">Quantité</th>
-			</tr>
+	
+<form action="traiterArticles.php" method="POST">
+	<div class="centrage">
+	<table class="article">
+		<tr class="article">
+			<th class="article">Nos Pains</th>
+			<th class="article">Prix</th>
+			<th class="article">Quantité</th>
+		</tr>
 		<?php
-				$pain->AffichageViennoiserie();
+			AffichagePain();
 		?>
 		
 	</table>
-	</body>
+	<br/>	
+	<table class="article">
+		<tr class="article">
+			<th class="article">Nos Viennoiseries</th>
+			<th class="article">Prix</th>
+			<th class="article">Quantité</th>
+		</tr>
+		<?php
+			AffichageViennoiserie();
+		?>
+		
+	</table>
+	
+	<br/>
+	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
+	
+	<input type="submit" name="action" value="Valider"/>
+	<input type="submit" name="effacer" value="Effacer"/>
+	</div>
+</form>
+</body>
 
 </html>
