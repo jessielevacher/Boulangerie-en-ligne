@@ -14,7 +14,7 @@
 		?>
 	</head>
 
-<body class="article">
+<body class="gateau">
 		<header id="top">
 			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
