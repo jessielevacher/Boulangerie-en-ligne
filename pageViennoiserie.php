@@ -14,7 +14,7 @@
 		?>
 	</head>
 
-<body class="article">
+<body class="viennoiserie">
 		<header id="top">
 			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
@@ -23,11 +23,11 @@
 
 <form action="traiterArticles.php" method="POST">
 	<div class="centrage">
-	<table class="article">
-		<tr class="article">
-			<th class="article">Nos Pains</th>
-			<th class="article">Prix</th>
-			<th class="article">Quantité</th>
+	<table class="panier">
+		<tr class="panier">
+			<th class="panier">Nos Pains</th>
+			<th class="panier">Prix</th>
+			<th class="panier">Quantité</th>
 		</tr>
 		<?php
 			AffichagePain();
@@ -35,11 +35,11 @@
 
 	</table>
 	<br/>
-	<table class="article">
-		<tr class="article">
-			<th class="article">Nos Viennoiseries</th>
-			<th class="article">Prix</th>
-			<th class="article">Quantité</th>
+	<table class="panier">
+		<tr class="panier">
+			<th class="panier">Nos Viennoiseries</th>
+			<th class="panier">Prix</th>
+			<th class="panier">Quantité</th>
 		</tr>
 		<?php
 			AffichageViennoiserie();
