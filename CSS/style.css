@@ -82,6 +82,24 @@ body.panier{
 
 }
 
+body.chocolat{
+  background-image:url("chocolat.jpeg");
+  background-repeat: no-repeat;
+
+}
+
+body.viennoiserie{
+  background-image:url("viennoiserie.jpeg");
+  background-repeat: no-repeat;
+
+}
+
+body.gateau{
+  background-image:url("gateau.jpeg");
+  background-repeat: no-repeat;
+
+}
+
 #barre_menu{
   display: flex;
   flex-direction: row;
