@@ -22,11 +22,11 @@
 
 <form action="traiterArticles.php" method="POST">
 	<div class="centrage">
-	<table class="article">
-		<tr class="article">
-			<th class="article">Nos Chocolats</th>
-			<th class="article">Prix</th>
-			<th class="article">Quantité</th>
+	<table class="panier">
+		<tr class="panier">
+			<th class="panier">Nos Chocolats</th>
+			<th class="panier">Prix</th>
+			<th class="panier">Quantité</th>
 		</tr>
 		<?php
 			AffichageChocolat();
