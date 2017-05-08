@@ -2,7 +2,6 @@
 date 1/05/2017 -->
 
 <?php
-  require("Commande.class.php");
   require("Panier.class.php");
 
   class Client  {
@@ -16,7 +15,7 @@ date 1/05/2017 -->
     protected $telephone;
     protected $pseudo;
     protected $listeCommandes;
-    //protected $panier;
+    protected $panier;
 
     public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo) {
   		$this->nom = $nom;
@@ -29,7 +28,7 @@ date 1/05/2017 -->
   		$this->telephone = $telephone;
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
-  		//$this->panier=new Panier();
+  		$this->panier = new Panier();
     }
 
     public function __destruct() {}
@@ -74,9 +73,9 @@ date 1/05/2017 -->
       return $this->listeCommandes;
     }
 
-    /* public function getPanier() {
+    public function getPanier() {
       return $this->panier;
-    } */
+    }
 
     public function enregistrerInfos($mdp) {
       $fichier = @fopen("Fichiers/info.txt", "a+");
@@ -96,7 +95,7 @@ date 1/05/2017 -->
 
     //On affiche les commandes càd :
     //numéro de la commande ; date ; moment ; liste des articles (quantité + nom du produit) ; prix total
-    /*public function afficherCommandes() {
+    public function afficherCommandes() {
       for ($i = 0; $i < count($this->listeCommandes); $i++) {
         echo "<tr>";
         echo "<td>".$this->listeCommandes[$i]->getNumero()."</td>";
@@ -114,6 +113,6 @@ date 1/05/2017 -->
     //On ajoute une commande à la liste des commandes
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
-    }*/
+    }
 }
 ?>

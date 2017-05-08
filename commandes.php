@@ -9,12 +9,9 @@ date 1/05/2017 -->
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<?php
-      require("Commande.class.php");
-      require("Client.class.php");
-			require("Panier.class.php");
+			require("Client.class.php");
 			session_start();
-			$panier = $_SESSION['panier'];
-			//$client = $_SESSION['client'];
+			$client = $_SESSION['client'];
     ?>
 	</head>
 
