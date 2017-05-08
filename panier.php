@@ -76,7 +76,7 @@ date 29/04/2017 -->
 	<br/>
 	<input type="submit" name="action" value="Commander"/>
 
-	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
+	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 	</div>
 
 	</form>
