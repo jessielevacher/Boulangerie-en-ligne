@@ -6,13 +6,14 @@ date 1/05/2017 -->
   require("Panier.class.php");
 
   class Boulangerie {
+    protected $listeClients;
     protected $listeArticles;
     protected $panier;
 
     public function __construct() {
       //On remplit la listeArticles avec le fichier comme dans la classe Panier
       $i = 0;
-      $fichier = fopen ("articles.txt", "r");
+      $fichier = fopen ("Fichiers/articles.txt", "r");
     	while (! feof ($fichier)) {
     		$c = fgetc ($fichier);
         $Champ = explode(";",$c);
@@ -25,22 +26,20 @@ date 1/05/2017 -->
       //On crée le panier de la boulangerie
       $panier = new Panier();
     }
-    
+
     public function AffichageViennoiserie(){
-      for ($i=0; $i < count($this->listeArticles); $i++) {
-        if ($this->listeArticles[$i]->getClassement()=="viennoiserie") {
+      for ($i=19; $i < 28; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
           echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
-        }
       }
     }
-    
+
      public function AffichagePain(){
-      for ($i=18; $i < 36; $i++) {
+      for ($i=29; $i < 36; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
@@ -49,9 +48,9 @@ date 1/05/2017 -->
           echo "</tr>";
       }
     }
-    
+
      public function AffichageChocolat(){
-      for ($i=36 $i < 50; $i++) {
+      for ($i=37; $i < 54; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
@@ -60,7 +59,7 @@ date 1/05/2017 -->
           echo "</tr>";
       }
     }
-    
+
      public function AffichageGateau(){
       for ($i=0; $i < 18; $i++) {
           echo "<tr class=\"panier\">";
@@ -69,8 +68,6 @@ date 1/05/2017 -->
           echo "<td class=\"panier\">".$prix."€</td>";
           echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
-        
-      }
     }
 
   }
