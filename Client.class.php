@@ -29,6 +29,7 @@ date 1/05/2017 -->
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
   		$this->panier = new Panier();
+  		protected $id;
     }
 
     public function __destruct() {}
@@ -76,21 +77,47 @@ date 1/05/2017 -->
     public function getPanier() {
       return $this->panier;
     }
+    
+       public function getid() {
+      return $this->id;
+    }
 
-    public function enregistrerInfos($mdp) {
-      $fichier = @fopen("Fichiers/info.txt", "a+");
-	    fputs($fichier, $this->pseudo." ".$mdp."\n");
-	    fclose($fichier);
+   public function enregistrerInfos($mdp) {
+	
+	$fichier = @fopen("Fichiers/info.txt", "a+");
+		fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n"); 
+	fclose($fichier);
     }
 
     public function enregistrerInfosComplementaires() {
-      $fichier = @fopen("Fichiers/clients.txt", "a+");
-      fputs($fichier, $this->pseudo." ".serialize($this)."\n");
-      fclose($fichier);
-		}
+		
+if (filesize("Fichiers/clients.txt")==0)
+{
+	$fichier = @fopen("Fichiers/clients.txt", "a+");
+	fwrite($fichier,serialize($this));
+	fclose($fichier);
+		
+}
+else
+{
+$fichier = @fopen("Fichiers/clients.txt", "r+");		   
+		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
+		$contenu = explode(PHP_EOL, $contenu); 
+fclose($fichier);		 
+$i=$this->id;
+		$contenu[$i]=serialize($this);
+		
+			$contenu = implode(PHP_EOL, $contenu);
+$fichier = @fopen("Fichiers/clients.txt", "w");
+		fwrite($fichier, $contenu);
+fclose($fichier);	
+}
+  }
+   
 
     public function recupererInfos(){
 
+       
     }
 
     //On affiche les commandes càd :
@@ -114,5 +141,7 @@ date 1/05/2017 -->
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
     }
+    
+  
 }
 ?>
