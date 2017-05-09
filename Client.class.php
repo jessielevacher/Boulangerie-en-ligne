@@ -17,8 +17,9 @@ date 1/05/2017 -->
     protected $pseudo;
     protected $listeCommandes;
     protected $panier;
+    protected $id;
 
-    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo) {
+    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo,$iD) {
   		$this->nom = $nom;
   		$this->prenom = $prenom;
   		$this->dateNaissance = $dateNaissance;
@@ -29,7 +30,8 @@ date 1/05/2017 -->
   		$this->telephone = $telephone;
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
-  		$this->panier = new Panier();
+  		/*$this->panier = new Panier();*/
+  		$this->id=$iD;
     }
 
     public function __destruct() {}
@@ -91,7 +93,9 @@ date 1/05/2017 -->
     public function enregistrerInfosComplementaires() {
       if (filesize("Fichiers/clients.txt")==0) {
         $fichier = @fopen("Fichiers/clients.txt", "a+");
-      	fwrite($fichier,serialize($this));
+      	$a=serialize($this);
+		$param = urlencode($a);
+		fwrite($fichier,$param);
       	fclose($fichier);
       }
       else {
@@ -99,8 +103,9 @@ date 1/05/2017 -->
 		    $contenu = fread($fichier, filesize("Fichiers/clients.txt"));
 		    $contenu = explode(PHP_EOL, $contenu);
         fclose($fichier);
-        $i=$this->id;
-		    $contenu[$i]=serialize($this);
+       $i=$this->id;
+		$param=serialize($this);
+		$contenu[$i]=$param;
 
 			  $contenu = implode(PHP_EOL, $contenu);
         $fichier = @fopen("Fichiers/clients.txt", "w");
@@ -114,7 +119,7 @@ date 1/05/2017 -->
 
     }
 
-    public function afficherArticlesCommande($i) {
+   /* public function afficherArticlesCommande($i) {
       $chaine = "";
       for ($j = 0; $j < count($this->listeCommandes[$i]->getListeArticlesCommandes()) ; $j++) {
         $chaine=$chaine.$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
@@ -139,7 +144,7 @@ date 1/05/2017 -->
     //On ajoute une commande à la liste des commandes
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
-    }
+    }*/
 
 
 }

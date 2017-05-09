@@ -43,15 +43,11 @@ $cpOK=preg_match("#^[0-9]{5}$#", $_POST['cp']);
 $jourOK=preg_match("#^([0-2]?[0-9])|(3[0-1])$#", $_POST['jour']) ;
 $moisOK=preg_match("#^0?[1-9]|1[0-2]$#", $_POST['mois']) ;
 $anneeOK=preg_match("#^19[0-9][0-9]|200[0-9]|201[0-7]$#", $_POST['annee']);
-$tmp="invalide";
 
 
 
 
-    
-
-
-if ( $telOK && $cpOK && $jourOK && $moisOK && $anneeOK && !empty ( $_POST ["nom"]) && !empty ( $_POST ["prenom"]) && !empty ( $_POST ["adresse"]) && !empty ( $_POST ["ville"]) && isset( $_POST["monSexe"])  && !empty ( $_POST ["pseudo"])   && !empty ( $_POST ["cmdp"]) && ($_POST ["cmdp"] == $_POST ["mdp"] ) ) {
+if ( $telOK && $cpOK && $jourOK && $moisOK && $anneeOK && !empty ( $_POST ['nom']) && !empty ( $_POST ['prenom']) && !empty ( $_POST ["adresse"]) && !empty ( $_POST ["ville"]) && isset( $_POST["monSexe"])  && !empty ( $_POST ['pseudo'])   && !empty ( $_POST ["cmdp"]) && ($_POST ["cmdp"] == $_POST ["mdp"] ) ) {
 
 if (pseudoUtilise())
 {
@@ -62,13 +58,13 @@ if (pseudoUtilise())
 }
 else
 {
-$birth= $_POST ["jour"]."/".$_POST ["mois"]."/".$_POST ["annee"];
+$birth=$_POST ["jour"]."/".$_POST ["mois"]."/".$_POST ["annee"];
 
 
 $numClient=recupererNbClients();
 
 $client=new Client($_POST ["nom"],$_POST ["prenom"],$birth,$_POST ["adresse"],$_POST ["ville"],$_POST ["cp"],$_POST ["monSexe"],$_POST ["telephone"],$_POST["pseudo"],$numClient);
-$client->enregistrerInfos($_POST ["mdp"]);
+$client->enregistrerInfos($_POST ['mdp']);
 $_SESSION["client"] = $client;
 header("Location: ./pagePrincipale.html");
 }
@@ -83,4 +79,3 @@ else
 	
 	
 ?>
-
