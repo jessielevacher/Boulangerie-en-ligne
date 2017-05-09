@@ -1,33 +1,41 @@
 <?php
 
-  // require("Panier.class.php");
-  // session_start();
-  // $panier = $_SESSION['panier'];
-  // //$client = $_SESSION['client'];
-  require("Client.class.php");
-  session_start();
-  $client = $_SESSION['client'];
-  $panier = $client->getPanier;
+ require("Client.class.php");
+ session_start();
+ $client = $_SESSION['client'];
+ $panier = $client->getPanier();
 
-//if (isset ($_POST ["action"])) {
 	  if(isset($_POST["actionG"])){
-		  for($i=0,$i<=18,$i++){
-        $a = $panier->listeArticles[$i]->getNom();
-			  $panier->ajouterArticle($a,$_GET['quantite'.strval($i)])
+		  for($i=0;$i<18;$i++){
+        $n = $panier->listeArticles[$i]->getNom();
+			   $panier->ajouterArticle($n,$_POST['quantite'.strval($i)])
 		  }
-      header("location:panier.php");
+      //header("Location:pagePrincipale.html");
+      <script language="JavaScript">
+        window.location.replace("pagePrincipale.html");
+        </script>
     }
-     if(isset($_POST["actionP"])){
-  		  for($i=18,$i<=36,$i++){
-  			  $panier->ajouterArticle($i,$_GET['quantite'.strval($i)])
+
+    if(isset($_POST["actionP"])){
+  		  for($i=18;$i<36;$i++){
+          $n = $listeArticles[$i]->getNom();
+  			  $panier->ajouterArticle($n,$_POST['quantite'.strval($i)])
   		  }
-      header("location:panier.php");
+        //header("Location:pagePrincipale.html");
+        <script language="JavaScript">
+          window.location.replace("pagePrincipale.html");
+          </script>
 	  }
+
     if(isset($_POST["actionC"])){
-		  for($i=36,$i<=54,$i++){
-			  $panier->ajouterArticle($i,$_GET['quantite'.strval($i)])
+		  for($i=36;$i<54;$i++){
+        $n = $listeArticles[$i]->getNom();
+			  $panier->ajouterArticle($n,$_POST['quantite'.strval($i)])
 		  }
-      header("location:panier.php");
+      //  header("Location:pagePrincipale.html");*
+      <script language="JavaScript">
+        window.location.replace("pagePrincipale.html");
+        </script>
     }
 //}else {
     //   if (isset ($_POST ["effacerP"]) {
@@ -50,7 +58,6 @@
     //    //On ouvre la page des gâteaux
     //    header("location:pageGateau.php");
     //  }
-
-   }
+    //}
 
  ?>

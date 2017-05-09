@@ -11,8 +11,8 @@
 	</head>
 <body class="chocolat">
 		<header id="top">
-			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
-		<h1> Boulangerie "Les 5 gourmandes" </h1>
+			<a href="page_connexion.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
+		<h1> Boulangerie "Les cinq gourmandes" </h1>
     <h2>Bienvenue sur la page des Gâteaux.</h2>
 		</header>
 <?php

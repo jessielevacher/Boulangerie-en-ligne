@@ -37,8 +37,8 @@ date 29/04/2017 -->
 
     public function ajouterArticle($nom, $quantite) {
       for($i=0;$i<count($this->listeArticles);i++){
-        if($listeArticles[$i] == $nom){
-          $listeArticles[$i]->setQuantite($quantite); 
+        if($listeArticles[$i]->getNom() == $nom){
+          $listeArticles[$i]->setQuantite($quantite);
         }
     }
 
