@@ -7,11 +7,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
 		  require("Article.class.php");
-			/*require("Client.class.php");
-			require("Panier.class.php");
-			session_start();
-			$panier = $_SESSION['panier'];*/
-			//$client = $_SESSION['client'];
 		?>
 	</head>
 <body class="chocolat">
@@ -20,8 +15,7 @@
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
     <h2>Bienvenue sur la page des Gâteaux.</h2>
 		</header>
-<?php //On remplit la listeArticles avec le fichier comme dans la classe Panier
- //protected $listeArticles;
+<?php
   $i = 0;
       $fichier = fopen ("Fichiers/articles.txt", "r");
     	while (! feof ($fichier)) {
@@ -51,10 +45,7 @@
           echo "</tr>";
     }
 		?>
-		<!--		<?php
-				$boulangerie->AffichageGateau();
-			?>
-	-->
+
 	</table>
 	<br/>
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>

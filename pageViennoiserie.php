@@ -5,14 +5,9 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
-		<?php
-			/*require("Client.class.php");
-			require("Panier.class.php");
+		<?php require("Article.class.php");
+ 		?>
 
-			session_start();
-			$panier = $_SESSION['panier'];
-			//$client = $_SESSION['client']; */
-		?>
 	</head>
 
 <body class="viennoiserie">
@@ -22,6 +17,20 @@
 		<h2> Bienvenue sur la page des pains et viennoiseries. </h2>
 		</header>
 
+	<?php //On remplit la listeArticles avec le fichier comme dans la classe Panier
+	 //protected $listeArticles;
+	  $i = 0;
+	  $fichier = fopen ("Fichiers/articles.txt", "r");
+	  while (! feof ($fichier)) {
+			$c = fgets ($fichier);
+	    $Champ = explode(";",$c);
+	    $article = new Article($Champ[0],intval($Champ[1]),$Champ[2],floatval($Champ[3]));
+			$listeArticles[$i] = $article;
+	    $i = $i + 1;
+    }
+    fclose ($fichier);
+				  ?>
+
 <form action="traiterArticles.php" method="POST">
 	<div class="centrage">
 	<table class="panier">
@@ -30,19 +39,17 @@
 			<th class="panier">Prix</th>
 			<th class="panier">Quantité</th>
 		</tr>
-		<tr>
-			<td> Citron des neiges </td>
-			<td> 24 E </td>
-			<td> <select name="quantite" size="3" multiple="multiple">
-<option value="1">0</option>
-<option selected="selected" value="2">1</option>
-<option value="3">2</option>
-</select> </td>
-		</tr>
-		<!--	<?php
-					$boulangerie->AffichagePain();
-				?>
-			-->
+
+		<?php
+			for ($i=28; $i < 36; $i++) {
+					echo "<tr class=\"panier\">";
+					echo "<td class=\"panier\">".$listeArticles[$i]->getNom()."</td>";
+					$prix = $listeArticles[$i]->getPrix();
+					echo "<td class=\"panier\">".$prix."€</td>";
+					echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
+					echo "</tr>";
+		}
+		?>
 
 	</table>
 
@@ -53,10 +60,17 @@
 			<th class="panier">Prix</th>
 			<th class="panier">Quantité</th>
 		</tr>
-		<!--		<?php
-				$boulangerie->AffichageViennoiserie();
-			?>
-		-->
+
+		<?php
+			for ($i=18; $i < 28; $i++) {
+					echo "<tr class=\"panier\">";
+					echo "<td class=\"panier\">".$listeArticles[$i]->getNom()."</td>";
+					$prix = $listeArticles[$i]->getPrix();
+					echo "<td class=\"panier\">".$prix."€</td>";
+					echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
+					echo "</tr>";
+		}
+		?>
 	</table>
 
 	<br/>

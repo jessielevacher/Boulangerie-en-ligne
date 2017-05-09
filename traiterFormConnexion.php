@@ -1,6 +1,7 @@
 <?php
 
 require("Client.class.php");
+require("Boulangerie.class.php")
 
 session_start();
 
@@ -33,7 +34,7 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
 	 $_SESSION["client"] = $client;
 	 header("Location: ./pagePrincipale.html");
 	 //On crée une instance de Boulangerie
-	 $boulangerie = new Boulangerie();
+	 //$boulangerie = new Boulangerie();
    }
     // header ("Location ...") rédirige le navigateur vers la page indiquée à partir du script
   else {
