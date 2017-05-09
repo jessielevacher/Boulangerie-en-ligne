@@ -30,7 +30,6 @@ date 1/05/2017 -->
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
   		$this->panier = new Panier();
-  		//protected $id;
     }
 
     public function __destruct() {}

@@ -16,11 +16,18 @@ date 1/05/2017 -->
 	</head>
 
 	<body class="panier">
-		<header id="top">
-			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
-		</header>
 
+		<div id="tableau">
+			<table>
+				<tr>
+					<th><a href="pagePrincipale.html" class="bouton"> <input class="bouton" type="button" value="Les produits"></th>
+					<th><a href="panier.php" class="bouton"> <input class="bouton" type="button" value="Mon panier"></th>
+					<th><a href="deconnexion.php" class="bouton"> <input class="bouton" type="button" value="Se déconnecter"> </a></th>
+				</tr>
+			</table>
+		</div>
+		
 		<h2> Mes commandes </h2>
 		<table class="panier">
 			<tr class="panier">
@@ -30,7 +37,9 @@ date 1/05/2017 -->
 				<th class="panier">Total</th>
 			</tr>
 
-			<?php $client->afficherCommandes(); ?>
+			<?php
+				$client->afficherCommandes();
+			?>
 		</table>
 </body>
 

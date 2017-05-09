@@ -29,7 +29,8 @@ date 1/05/2017 -->
       $nbArticles = 0;
       for ($i = 0; $i < count($panier->getListeArticles()); $i++) {
         if ($panier->getListeArticles()[$i]->getQuantite()!=0) {
-          $this->listeArticlesCommandes[$nbArticles] = $panier->getListeArticles()[$i];
+          $article = clone $panier->getListeArticles()[$i];
+          $this->listeArticlesCommandes[$nbArticles] = $article;
           $nbArticles++;
         }
       }

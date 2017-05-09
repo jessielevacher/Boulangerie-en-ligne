@@ -17,7 +17,7 @@ date 29/04/2017 -->
 
 	<body class="panier">
 		<header id="top">
-			<a href="pagePrincipale.php" id="logo"> <input type="button" value="Déconnexion"> </a>
+			<a href="deconnexion.php" id="logo"> <input type="button" value="Déconnexion"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
 		</header>
 
