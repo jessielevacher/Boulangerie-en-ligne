@@ -164,11 +164,13 @@ margin-right:10px;
   height: 50px;
   text-decoration-style: none;
 }
+.section_produit{
+  margin-top: 100px;
+}
 #images_produit{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 200px;
   background-color: #FFF0F5;
 }
 .images_produit{
@@ -181,4 +183,8 @@ margin-right:10px;
 #tableau{
 display: flex;
 justify-content: space-around;
+}
+
+.bouton_deconnexion{
+  float: right;
 }
