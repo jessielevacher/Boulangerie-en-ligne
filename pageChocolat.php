@@ -43,7 +43,7 @@
 					echo "<td class=\"panier\">".$listeArticles[$i]->getNom()."</td>";
 					$prix = $listeArticles[$i]->getPrix();
 					echo "<td class=\"panier\">".$prix."€</td>";
-					echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
+					echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"0\" max=\"50\" defaultValue=\"0\"></td>";
 					echo "</tr>";
 		}
 		?>
