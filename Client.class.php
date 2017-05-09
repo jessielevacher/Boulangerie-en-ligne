@@ -2,7 +2,7 @@
 date 1/05/2017 -->
 
 <?php
-  //require("Panier.class.php");
+  require("Panier.class.php");
 
   class Client  {
     protected $nom;
@@ -77,47 +77,47 @@ date 1/05/2017 -->
     public function getPanier() {
       return $this->panier;
     }
-    
+
        public function getid() {
       return $this->id;
     }
 
    public function enregistrerInfos($mdp) {
-	
+
 	$fichier = @fopen("Fichiers/info.txt", "a+");
-		fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n"); 
+		fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n");
 	fclose($fichier);
     }
 
     public function enregistrerInfosComplementaires() {
-		
+
 if (filesize("Fichiers/clients.txt")==0)
 {
 	$fichier = @fopen("Fichiers/clients.txt", "a+");
 	fwrite($fichier,serialize($this));
 	fclose($fichier);
-		
+
 }
 else
 {
-$fichier = @fopen("Fichiers/clients.txt", "r+");		   
+$fichier = @fopen("Fichiers/clients.txt", "r+");
 		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
-		$contenu = explode(PHP_EOL, $contenu); 
-fclose($fichier);		 
+		$contenu = explode(PHP_EOL, $contenu);
+fclose($fichier);
 $i=$this->id;
 		$contenu[$i]=serialize($this);
-		
+
 			$contenu = implode(PHP_EOL, $contenu);
 $fichier = @fopen("Fichiers/clients.txt", "w");
 		fwrite($fichier, $contenu);
-fclose($fichier);	
+fclose($fichier);
 }
   }
-   
+
 
     public function recupererInfos(){
 
-       
+
     }
 
     //On affiche les commandes càd :
@@ -141,7 +141,7 @@ fclose($fichier);
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
     }
-    
-  
+
+
 }
 ?>

@@ -1,4 +1,4 @@
-citron des neiges;0;images/image29;24;grand gateau
+citron des neiges;1;images/image29;24;grand gateau
 triolot;0;images/image30;25.8;grand gateau
 millefeuille;0;images/image31;24;grand gateau
 mousse fraise citron;0;images/image32;32;grand gateau
@@ -13,7 +13,7 @@ eclair au cafe;0;images/image24;2.20;petit gateau
 religieuse au chocolat;0;images/image25;2.40;petit gateau
 religieuse au cafe;0;images/image26;2.40;petit gateau
 tarte au citron meringuée;0;images/image15;19.20;tarte
-tarte aux pommes;0;images/image16;14.4;tarte
+tarte aux pommes;1;images/image16;14.4;tarte
 tarte aux fraises;0;images/image17;24;tarte
 tarte au chocolat;0;images/image18;21;tarte
 pain au chocolat;0;images/image1;1;viennoiserie
@@ -23,7 +23,7 @@ grande brioche au raisin;0;images/image4;4.48;viennoiserie
 petite brioche au raisin;0;images/image5;2.58;viennoiserie
 brioche nature;0;images/image6;4.13;viennoiserie
 meringue au chocolat;0;images/image27;2.50;autre
-meringue nature;0;images/image28;1.80;autre
+meringue nature;7;images/image28;1.80;autre
 sable;0;images/image35;0.3;biscuit
 cookie;0;images/image36;0.5;biscuit
 pain platin;0;images/image7;1.33;pain

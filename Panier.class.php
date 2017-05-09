@@ -2,7 +2,7 @@
 date 29/04/2017 -->
 
 <?php
-  //require("Article.class.php");
+  require("Article.class.php");
 
   class Panier {
     protected $listeArticles;

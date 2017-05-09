@@ -12,11 +12,11 @@ date 1/05/2017 -->
       //On crée une commande
       $commande = new Commande($client->getPanier(), $_POST ["jour"], $_POST ["mois"], $_POST ["annee"], $_POST ["moment"]);
       //On ajouter la commande à la liste des commandes du client
-      //$client->ajouterCommande($commande);
+      $client->ajouterCommande($commande);
       //On réinitialise le panier
       $client->getPanier()->reinitialiserPanier(0,count($client->getPanier()->getListeArticles()));
       //On ouvre la page commande.php
-      header("location:panier.php");
+      header("location:commandes.php");
     } else {
       if ($client->getPanier()->panierVide()==FALSE) { //=tous les champs ne sont pas remplis
         //On envoie un message d'erreur et on reste sur la page du panier

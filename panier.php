@@ -32,7 +32,7 @@ date 29/04/2017 -->
 
 			<?php
 				$panier = $client->getPanier();
-			//	$panier->afficherPanier();
+				$panier->afficherPanier();
 			?>
 
 		</table>

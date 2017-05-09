@@ -31,7 +31,8 @@ date 1/05/2017 -->
 			</tr>
 
 			<?php
-				$client->afficherCommandes();
+
+			//	$client->afficherCommandes();
 			?>
 		</table>
 
