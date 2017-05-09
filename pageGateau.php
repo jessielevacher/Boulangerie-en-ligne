@@ -21,7 +21,7 @@
     <h2>Bienvenue sur la page des Gâteaux.</h2>
 		</header>
 <?php //On remplit la listeArticles avec le fichier comme dans la classe Panier
- //protected $listeArticles;     
+ //protected $listeArticles;
   $i = 0;
       $fichier = fopen ("Fichiers/articles.txt", "r");
     	while (! feof ($fichier)) {
@@ -55,7 +55,7 @@
 	<br/>
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionC" value="Valider"/>
+	<a href="pagePrincipale.html"><input type="submit" name="actionC" value="Valider"/></a>
 	<input type="submit" name="effacerC" value="Effacer"/>
 	</div>
 </form>
