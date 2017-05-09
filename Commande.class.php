@@ -12,7 +12,7 @@ date 1/05/2017 -->
 
     public function __construct($panier, $jour, $mois, $annee, $moment) {
       //On met un numéro de commande aléatoire = combinaison de 10 lettres et chiffres
-      $alphabet="0123456789abcdefghijklmnopqrstuvwxyz";
+      $alphabet="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       $num = '';
       for($i = 0; $i < 10; $i++)
 	       $num=$num.$alphabet[rand(0,35)];

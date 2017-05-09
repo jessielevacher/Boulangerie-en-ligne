@@ -42,7 +42,7 @@ chocolat spéculos au lait;0;images/image19;5.20;chocolat
 chocolat sésame au lait;0;images/image20;5.20;chocolat
 chocolat orangette noir;0;images/image21;5.20;chocolat
 chocolat nounours lait;0;images/image22;6.10;chocolat
-chocolat nounours blanc;6.10;images/image23;chocolat
+chocolat nounours blanc;0;images/image23;6.10;chocolat
 chocolat nougat noir;0;images/image24;4.90;chocolat
 chocolat nougat au lait;0;images/image25;4.90;chocolat
 chocolat noisettes au lait;0;images/image26;5.10;chocolat

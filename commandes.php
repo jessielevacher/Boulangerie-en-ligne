@@ -19,15 +19,17 @@ date 1/05/2017 -->
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
 
 		<div id="tableau">
+			<form action ="traiterFormInscription.php">
 			<table>
 				<tr>
 					<th><a href="pagePrincipale.html" class="bouton"> <input class="bouton" type="button" value="Les produits"></th>
 					<th><a href="panier.php" class="bouton"> <input class="bouton" type="button" value="Mon panier"></th>
-					<th><a href="deconnexion.php" class="bouton"> <input class="bouton" type="button" value="Se déconnecter"> </a></th>
+					<th><input class="bouton" type="submit" value="Se déconnecter"> </th>
 				</tr>
 			</table>
+			</form>
 		</div>
-		
+
 		<h2> Mes commandes </h2>
 		<table class="panier">
 			<tr class="panier">

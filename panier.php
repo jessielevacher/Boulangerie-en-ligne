@@ -78,6 +78,8 @@ date 29/04/2017 -->
 	<input type="submit" name="action" value="Commander"/>
 
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
+	<br/>
+	<label for="date " id="date">La commande se règlera en boutique ! N'oubliez pas votre numéro de commande.</label> 
 	</div>
 
 	</form>
