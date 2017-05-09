@@ -31,7 +31,7 @@
 				<th class="panier">Quantité</th>
 			</tr>
 		<?php
-			//	AffichageGateau();
+				AffichageGateau();
 		?>
 
 	</table>
