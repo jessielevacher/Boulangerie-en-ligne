@@ -37,18 +37,18 @@ pain de campagne;0;images/image14;1.98;pain
 mini tablette;0;images/image15;8.90;chocolat
 chocolat de thé;0;images/image16;5.60;chocolat
 ecrin composé;0;images/image17;20.70;chocolat
-chocolat spéculos noir;0;images/image18;chocolat
-chocolat spéculos au lait;0;images/image19;chocolat
-chocolat sésame au lait;0;images/image20;chocolat
-chocolat orangette noir;0;images/image21;chocolat
-chocolat nounours lait;0;images/image22;chocolat
-chocolat nounours blanc;0;images/image23;chocolat
-chocolat nougat noir;0;images/image24;chocolat
-chocolat nougat au lait;0;images/image25;chocolat
-chocolat noisettes au lait;0;images/image26;chocolat
-chocolat noisettes blanc;0;images/image27;chocolat
-chocolat mendiants noir;0;images/image28;chocolat
-chocolat love noir;0;images/image29;chocolat
-chocolat love au lait;0;images/image30;chocolat
-chocolat love blanc;0;images/image31;chocolat
-fèves de cacao;0;images/image32;chocolat
+chocolat spéculos noir;5.20;images/image18;chocolat
+chocolat spéculos au lait;5.20;images/image19;chocolat
+chocolat sésame au lait;5.20;images/image20;chocolat
+chocolat orangette noir;5.20;images/image21;chocolat
+chocolat nounours lait;6.10;images/image22;chocolat
+chocolat nounours blanc;6.10;images/image23;chocolat
+chocolat nougat noir;4.90;images/image24;chocolat
+chocolat nougat au lait;4.90;images/image25;chocolat
+chocolat noisettes au lait;5.10;images/image26;chocolat
+chocolat noisettes blanc;5.10;images/image27;chocolat
+chocolat mendiants noir;6.00;images/image28;chocolat
+chocolat love noir;5.30;images/image29;chocolat
+chocolat love au lait;5.30;images/image30;chocolat
+chocolat love blanc;5.30;images/image31;chocolat
+fèves de cacao;16.90;images/image32;chocolat
