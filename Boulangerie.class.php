@@ -40,41 +40,36 @@ date 1/05/2017 -->
     }
     
      public function AffichagePain(){
-      for ($i=0; $i < count($this->listeArticles); $i++) {
-        if ($this->listeArticles[$i]->getClassement()=="pain") {
+      for ($i=18; $i < 36; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
           echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
-        }
       }
     }
     
      public function AffichageChocolat(){
-      for ($i=0; $i < count($this->listeArticles); $i++) {
-        if ($this->listeArticles[$i]->getClassement()=="autre") {
+      for ($i=36 $i < 50; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
           echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
-        }
       }
     }
     
      public function AffichageGateau(){
-      for ($i=0; $i < count($this->listeArticles); $i++) {
-        if ($this->listeArticles[$i]->getClassement()=="gateau") {
+      for ($i=0; $i < 18; $i++) {
           echo "<tr class=\"panier\">";
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
           echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
-        }
+        
       }
     }
 
