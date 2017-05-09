@@ -72,7 +72,7 @@ date 1/05/2017 -->
           echo "<td class=\"panier\">".$this->listeArticles[$i]->getNom()."</td>";
           $prix = $this->listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
-          echo  "<td class=\"panier\">"<input type="number" name="quantité" min="1" max="50" defaultValue="0">"</td>";
+         // echo  "<td class=\"panier\">"<input type="number" name="quantité" min="1" max="50" defaultValue="0">"</td>";
           echo "</tr>";
         }
       }
