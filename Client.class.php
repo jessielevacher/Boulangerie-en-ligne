@@ -36,6 +36,7 @@ date 1/05/2017 -->
 
     public function __destruct() {}
 
+	// Getteurs //
     public function getPrenom() {
         return $this->prenom;
     }
@@ -84,13 +85,19 @@ date 1/05/2017 -->
       return $this->id;
     }
 
+	// Autres méthodes //
+	
+	//Enregistre le pseudo mot de passe et id du client sur le fichier info.txt prévu à cet effet
    public function enregistrerInfos($mdp) {
       $fichier = @fopen("Fichiers/info.txt", "a+");
       fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n");
       fclose($fichier);
     }
 
+	//enregistre le client en tant qu'objet (serialisation) dans le fichier clients.txt
     public function enregistrerInfosComplementaires() {
+		
+		//Si le fichier est vide, on l'enregistre sur la première ligne venue
       if (filesize("Fichiers/clients.txt")==0) {
         $fichier = @fopen("Fichiers/clients.txt", "a+");
       	$a=serialize($this);
@@ -98,28 +105,25 @@ date 1/05/2017 -->
 		fwrite($fichier,$param);
       	fclose($fichier);
       }
-      else {
-        $fichier = @fopen("Fichiers/clients.txt", "r+");
+      else { //sinon on l'enregistre sur la ligne correspondant à son ID, ce qui efface la version précédente si il y en avait une
+        $fichier = @fopen("Fichiers/clients.txt", "r+"); //on lit le fichier
 		    $contenu = fread($fichier, filesize("Fichiers/clients.txt"));
-		    $contenu = explode(PHP_EOL, $contenu);
+		    $contenu = explode(PHP_EOL, $contenu); //on le divise selon les sauts à la ligne
         fclose($fichier);
        $i=$this->id;
-		$param=serialize($this);
-		$contenu[$i]=$param;
+		$a=serialize($this);
+		$param=urlencode($a); //on serialise l'objet
+		$contenu[$i]=$param; //on le met à la bonne place
 
 			  $contenu = implode(PHP_EOL, $contenu);
-        $fichier = @fopen("Fichiers/clients.txt", "w");
+        $fichier = @fopen("Fichiers/clients.txt", "w"); //on reécrit le fichier
 		    fwrite($fichier, $contenu);
         fclose($fichier);
       }
   }
 
-    public function recupererInfos(){
 
-
-    }
-
-   /* public function afficherArticlesCommande($i) {
+    public function afficherArticlesCommande($i) {
       $chaine = "";
       for ($j = 0; $j < count($this->listeCommandes[$i]->getListeArticlesCommandes()) ; $j++) {
         $chaine=$chaine.$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
@@ -144,7 +148,7 @@ date 1/05/2017 -->
     //On ajoute une commande à la liste des commandes
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
-    }*/
+    }
 
 
 }

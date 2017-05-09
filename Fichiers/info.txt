@@ -1,10 +1,5 @@
-lele coucou45 2 
+lele coucou45 2
 helloworl coucou45 3 
 equesnel coucou56 0 
 lmanneheut coucou48 4 
-l coucou45 5 
-l coucou45 6 
-l cccccccc 7 
-l c 8 
-l coucou45 9 
-ll c8 10 
+

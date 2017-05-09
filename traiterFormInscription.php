@@ -1,3 +1,5 @@
+<!-- author  Léa
+date 1/05/2017 -->
 
 <?php
 
@@ -6,7 +8,7 @@ require("Client.class.php");
 
 
 function recupererNbClients()
-{
+{//On recupère le nombre de clients déjà inscrit et on l'incrémente de 1 car on va en créer un nouveau
     $fichier = @fopen("Fichiers/nbClients.txt", "a+");
 		$numClient=fgets($fichier);
 		$numClient=$numClient+1;
@@ -19,7 +21,7 @@ function recupererNbClients()
 
 
 function pseudoUtilise()
-{
+{ //Vérifie si le pseudo choisi à l'inscription n'est pas déjà utilisé par un autre utilisateur
     $found=false;
 	
 	if ($fichier) {
@@ -35,9 +37,10 @@ function pseudoUtilise()
 	}
 	return $found;
 }
-
+//On crée un session
 session_start();
 
+//vérification des expressions régulières
 $telOK=preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $_POST['telephone']);
 $cpOK=preg_match("#^[0-9]{5}$#", $_POST['cp']);
 $jourOK=preg_match("#^([0-2]?[0-9])|(3[0-1])$#", $_POST['jour']) ;
@@ -46,7 +49,7 @@ $anneeOK=preg_match("#^19[0-9][0-9]|200[0-9]|201[0-7]$#", $_POST['annee']);
 
 
 
-
+//si toutes les expressions régulières sont vérifiées et qu'aucun champs n'est vide alors on peut créer le client
 if (  $telOK && $cpOK && $jourOK && $moisOK && $anneeOK && !empty ( $_POST ['nom']) && !empty ( $_POST ['prenom']) && !empty ( $_POST ["adresse"]) && !empty ( $_POST ["ville"]) && isset( $_POST["monSexe"])  && !empty ( $_POST ['pseudo'])   && !empty ( $_POST ["cmdp"]) && ($_POST ["cmdp"] == $_POST ["mdp"] ) ) {
 
 if (pseudoUtilise())
@@ -62,13 +65,16 @@ $birth=$_POST ["jour"]."/".$_POST ["mois"]."/".$_POST ["annee"];
 
 
 $numClient=recupererNbClients();
-
+//on crée un nouveau client
 $client=new Client($_POST ["nom"],$_POST ["prenom"],$birth,$_POST ["adresse"],$_POST ["ville"],$_POST ["cp"],$_POST ["monSexe"],$_POST ["telephone"],$_POST["pseudo"],$numClient);
+//on enregistre son pseudo, son mot de passe et son ID dans le fichier prévu à cet effet
 $client->enregistrerInfos($_POST ['mdp']);
+//on crée un variable de session pour pouvoir récuperer ce client sur toutes les pages
 $_SESSION["client"] = $client;
+//l'inscription s'étant bien effectuée, nous nous redirigeons vers la page principale
 header("Location: ./pagePrincipale.html");
 }
-}
+} //si certains champs sont mal renseignés alors le message suivant est affiché
 else  
 	echo '<script language="JavaScript">
 	alert("Certains informations ne sont pas renseignées ou ne sont pas correctes");
