@@ -2,19 +2,19 @@
 date 1/05/2017 -->
 
 <?php
-  require("Commande.class.php");
   require("Client.class.php");
   session_start();
   $client = $_SESSION['client'];
 
   if (isset ($_POST ["action"])) {
     if ($client->getPanier()->panierVide()==FALSE && !empty ( $_POST ["jour"]) && !empty ( $_POST ["mois"]) && !empty ( $_POST ["annee"]) && !empty ( $_POST ["moment"])) {
+      //$p = clone $client->getPanier();
       //On crée une commande
       $commande = new Commande($client->getPanier(), $_POST ["jour"], $_POST ["mois"], $_POST ["annee"], $_POST ["moment"]);
       //On ajouter la commande à la liste des commandes du client
       $client->ajouterCommande($commande);
       //On réinitialise le panier
-      $client->getPanier()->reinitialiserPanier(0,count($client->getPanier()->getListeArticles()));
+      // $client->getPanier()->reinitialiserPanier(0,count($client->getPanier()->getListeArticles()));
       //On ouvre la page commande.php
       header("location:commandes.php");
     } else {

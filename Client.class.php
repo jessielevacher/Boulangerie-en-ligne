@@ -3,6 +3,7 @@ date 1/05/2017 -->
 
 <?php
   require("Panier.class.php");
+  require("Commande.class.php");
 
   class Client  {
     protected $nom;
@@ -29,7 +30,7 @@ date 1/05/2017 -->
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
   		$this->panier = new Panier();
-  		protected $id;
+  		//protected $id;
     }
 
     public function __destruct() {}
@@ -78,61 +79,60 @@ date 1/05/2017 -->
       return $this->panier;
     }
 
-       public function getid() {
+    public function getid() {
       return $this->id;
     }
 
    public function enregistrerInfos($mdp) {
-
-	$fichier = @fopen("Fichiers/info.txt", "a+");
-		fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n");
-	fclose($fichier);
+      $fichier = @fopen("Fichiers/info.txt", "a+");
+      fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n");
+      fclose($fichier);
     }
 
     public function enregistrerInfosComplementaires() {
+      if (filesize("Fichiers/clients.txt")==0) {
+        $fichier = @fopen("Fichiers/clients.txt", "a+");
+      	fwrite($fichier,serialize($this));
+      	fclose($fichier);
+      }
+      else {
+        $fichier = @fopen("Fichiers/clients.txt", "r+");
+		    $contenu = fread($fichier, filesize("Fichiers/clients.txt"));
+		    $contenu = explode(PHP_EOL, $contenu);
+        fclose($fichier);
+        $i=$this->id;
+		    $contenu[$i]=serialize($this);
 
-if (filesize("Fichiers/clients.txt")==0)
-{
-	$fichier = @fopen("Fichiers/clients.txt", "a+");
-	fwrite($fichier,serialize($this));
-	fclose($fichier);
-
-}
-else
-{
-$fichier = @fopen("Fichiers/clients.txt", "r+");
-		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
-		$contenu = explode(PHP_EOL, $contenu);
-fclose($fichier);
-$i=$this->id;
-		$contenu[$i]=serialize($this);
-
-			$contenu = implode(PHP_EOL, $contenu);
-$fichier = @fopen("Fichiers/clients.txt", "w");
-		fwrite($fichier, $contenu);
-fclose($fichier);
-}
+			  $contenu = implode(PHP_EOL, $contenu);
+        $fichier = @fopen("Fichiers/clients.txt", "w");
+		    fwrite($fichier, $contenu);
+        fclose($fichier);
+      }
   }
-
 
     public function recupererInfos(){
 
 
     }
 
+    public function afficherArticlesCommande($i) {
+      $chaine = "";
+      for ($j = 0; $j < count($this->listeCommandes[$i]->getListeArticlesCommandes()) ; $j++) {
+        $chaine=$chaine.$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
+      }
+      return $chaine;
+    }
+
     //On affiche les commandes càd :
     //numéro de la commande ; date ; moment ; liste des articles (quantité + nom du produit) ; prix total
     public function afficherCommandes() {
       for ($i = 0; $i < count($this->listeCommandes); $i++) {
-        echo "<tr>";
-        echo "<td>".$this->listeCommandes[$i]->getNumero()."</td>";
-        echo "<td>".$this->listeCommandes[$i]->getDate()." / ".$this->listeCommandes[$i]->getMoment()."</td>";
-        echo "<td>";
-          for ($j = 0; $j < count($this->listeCommandes[$j]->getListeArticlesCommandes()) ; $j++) {
-            echo $this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
-          }
-        echo "</td>";
-        echo "<td>".$this->listeCommandes[$i]->getTotal()."€ </td>";
+        echo "<tr class=\"panier\">";
+        echo "<td class=\"panier\">".$this->listeCommandes[$i]->getNumero()."</td>";
+        echo "<td class=\"panier\">".$this->listeCommandes[$i]->getDate()[0]."/".$this->listeCommandes[$i]->getDate()[1]."/".$this->listeCommandes[$i]->getDate()[2]." | ".$this->listeCommandes[$i]->getMoment()."</td>";
+        $chaine = $this->afficherArticlesCommande($i);
+        echo "<td class=\"panier\">".$chaine."</td>";
+        echo "<td class=\"panier\">".$this->listeCommandes[$i]->getTotal()."€ </td>";
         echo "</tr>";
       }
     }

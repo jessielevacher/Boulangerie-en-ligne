@@ -23,19 +23,15 @@ date 1/05/2017 -->
 
 		<h2> Mes commandes </h2>
 		<table class="panier">
-			<tr class="panier"> <!-- Titres colonnes -->
+			<tr class="panier">
 				<th class="panier">N° commande</th>
 				<th class="panier">Date de réception</th>
 				<th class="panier">Articles</th>
 				<th class="panier">Total</th>
 			</tr>
 
-			<?php
-
-			//	$client->afficherCommandes();
-			?>
+			<?php $client->afficherCommandes(); ?>
 		</table>
-
 </body>
 
 </html>
