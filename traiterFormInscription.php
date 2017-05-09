@@ -47,7 +47,7 @@ $anneeOK=preg_match("#^19[0-9][0-9]|200[0-9]|201[0-7]$#", $_POST['annee']);
 
 
 
-if ( $telOK && $cpOK && $jourOK && $moisOK && $anneeOK && !empty ( $_POST ['nom']) && !empty ( $_POST ['prenom']) && !empty ( $_POST ["adresse"]) && !empty ( $_POST ["ville"]) && isset( $_POST["monSexe"])  && !empty ( $_POST ['pseudo'])   && !empty ( $_POST ["cmdp"]) && ($_POST ["cmdp"] == $_POST ["mdp"] ) ) {
+if (  $telOK && $cpOK && $jourOK && $moisOK && $anneeOK && !empty ( $_POST ['nom']) && !empty ( $_POST ['prenom']) && !empty ( $_POST ["adresse"]) && !empty ( $_POST ["ville"]) && isset( $_POST["monSexe"])  && !empty ( $_POST ['pseudo'])   && !empty ( $_POST ["cmdp"]) && ($_POST ["cmdp"] == $_POST ["mdp"] ) ) {
 
 if (pseudoUtilise())
 {

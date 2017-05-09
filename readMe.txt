@@ -1,0 +1,1 @@
+- mettre les fichiers du dossier fichier en lecture ecriture pour tout le monde
