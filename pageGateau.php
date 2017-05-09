@@ -7,9 +7,9 @@
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
 			//require("Client.class.php");
-			//require("Panier.class.php");
-			//session_start();
-			//$panier = $_SESSION['panier'];
+			require("Panier.class.php");
+			session_start();
+			$panier = $_SESSION['panier'];
 			//$client = $_SESSION['client'];
 		?>
 	</head>
