@@ -9,19 +9,16 @@
 	  if(isset($_POST["actionG"])){
 		  for($i=0,$i<=18,$i++){
 			  ajouterArticle($i,$_GET['quantite'.strval($i)])
-        header("location:panier.php");
 		  }
     }
       if(isset($_POST["actionP"])){
   		  for($i=19,$i<=36,$i++){
   			  ajouterArticle($i,$_GET['quantite'.strval($i)])
-          header("location:panier.php");
   		  }
 	  }
     if(isset($_POST["actionC"])){
 		  for($i=37,$i<=54,$i++){
 			  ajouterArticle($i,$_GET['quantite'.strval($i)])
-        header("location:panier.php");
 		  }
     }
 }else {

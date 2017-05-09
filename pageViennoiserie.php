@@ -54,7 +54,7 @@
 	<br/>
 	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionP" value="Valider"/>
+	<a href="panier.php"> <input type="submit" name="actionP" value="Valider"/></a>
 	<input type="reset" name="effacerP" value="Effacer"/>
 	</div>
 </form>
