@@ -31,7 +31,8 @@ date 29/04/2017 -->
 			</tr>
 
 			<?php
-				$client->getPanier()->afficherPanier();
+				$panier = $client->getPanier();
+			//	$panier->afficherPanier();
 			?>
 
 		</table>
