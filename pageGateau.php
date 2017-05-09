@@ -50,8 +50,8 @@
 	<br/>
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionC" value="Valider"/>
-	<input type="reset" name="effacerC" value="Effacer"/>
+	<input type="submit" name="actionG" value="Valider"/>
+	<input type="reset" name="effacerG" value="Effacer"/>
 	</div>
 </form>
 </body>
