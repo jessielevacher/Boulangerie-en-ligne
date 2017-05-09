@@ -31,15 +31,15 @@
 				<th class="panier">Quantité</th>
 			</tr>
 		<?php
-				AffichageGateau();
+			//	AffichageGateau();
 		?>
 
 	</table>
 	<br/>
 	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionG" value="Valider"/>
-	<input type="submit" name="effacerG" value="Effacer"/>
+	<input class = "bouton" type="reset" name="actionG" value="Valider"/>
+	<input class = "bouton" type="reset" name="effacerG" value="Effacer"/>
 	</div>
 </form>
 
