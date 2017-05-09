@@ -27,7 +27,7 @@ date 1/05/2017 -->
         //On envoie un message d'erreur et on va sur la page principale
         echo '<script language="JavaScript">
         	alert("Votre panier est vide, vous ne pouvez pas effectuer de commande");
-          window.location.replace("pagePrincipale.php");
+          window.location.replace("pagePrincipale.html");
         	</script>';
       }
     }
