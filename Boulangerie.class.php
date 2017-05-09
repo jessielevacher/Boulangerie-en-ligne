@@ -11,6 +11,16 @@ date 1/05/2017 -->
     protected $panier;
 
     public function __construct() {
+      //On remplit la listeClients
+      $i=0;
+      $fichier = fopen("Fichiers/clients.txt", "r")
+      while (! feof ($fichier)){
+        $c = fgetc($fichier);
+        $this->listeClients[$i] = $c
+        $i = $i + 1 ;
+      }
+      fclose($fichier);
+
       //On remplit la listeArticles avec le fichier comme dans la classe Panier
       $i = 0;
       $fichier = fopen ("Fichiers/articles.txt", "r");
@@ -71,4 +81,13 @@ date 1/05/2017 -->
     }
 
   }
+
+  public function getNbClients(){
+    $i = 0;
+    while (!empty($listeClients[$i])){
+      i=i+1;
+    }
+    return $i;
+  }
+
 ?>
