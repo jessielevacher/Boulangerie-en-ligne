@@ -41,7 +41,7 @@
           echo "<td class=\"panier\">".$listeArticles[$i]->getNom()."</td>";
           $prix = $listeArticles[$i]->getPrix();
           echo "<td class=\"panier\">".$prix."€</td>";
-          echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"1\" max=\"50\" defaultValue=\"0\"></td>";
+          echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"0\" max=\"50\" defaultValue=\"0\"></td>";
           echo "</tr>";
     }
 		?>
@@ -50,8 +50,8 @@
 	<br/>
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionC" value="Valider"/>
-	<input type="reset" name="effacerC" value="Effacer"/>
+	<input type="submit" name="actionG" value="Valider"/>
+	<input type="reset" name="effacerG" value="Effacer"/>
 	</div>
 </form>
 </body>
