@@ -51,12 +51,16 @@
           echo "</tr>";
     }
 		?>
+		<!--		<?php
+				$boulangerie->AffichageGateau();
+			?>
+	-->
 	</table>
 	<br/>
 	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
-	<a href="pagePrincipale.html"><input type="submit" name="actionC" value="Valider"/></a>
-	<input type="submit" name="effacerC" value="Effacer"/>
+	<input type="submit" name="actionC" value="Valider"/>
+	<input type="reset" name="effacerC" value="Effacer"/>
 	</div>
 </form>
 </body>

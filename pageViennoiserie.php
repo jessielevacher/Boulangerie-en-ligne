@@ -39,6 +39,11 @@
 <option value="3">2</option>
 </select> </td>
 		</tr>
+		<!--	<?php
+					$boulangerie->AffichagePain();
+				?>
+			-->
+
 	</table>
 
 	<br/>
@@ -48,11 +53,14 @@
 			<th class="panier">Prix</th>
 			<th class="panier">Quantité</th>
 		</tr>
-
+		<!--		<?php
+				$boulangerie->AffichageViennoiserie();
+			?>
+		-->
 	</table>
 
 	<br/>
-	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
+	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
 	<input type="submit" name="actionP" value="Valider"/>
 	<input type="reset" name="effacerP" value="Effacer"/>
@@ -62,14 +70,3 @@
 </body>
 
 </html>
-
-<!-- A placer au bon endroit dans le code une fois que Client marchera-->
-<!--	<?php
-			$boulangerie = new Boulangerie();
-			$boulangerie->AffichagePain();
-		?>
-	-->
-	<!--		<?php
-			$Boulangerie->AffichageViennoiserie();
-		?>
--->
