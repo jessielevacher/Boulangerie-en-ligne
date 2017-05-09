@@ -1,52 +1,69 @@
+<!-- author Léa
+date 1/05/2017 -->
+
 <?php
 
 require("Client.class.php");
-require("Boulangerie.class.php")
 
+  function recupererInfos(){ //on récuère la ligne du fichier clients.txt correspondant à l'id du client qui souhaite se connecter
+		
+		$fichier = @fopen("Fichiers/clients.txt", "r+");		   
+		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
+		$contenu = explode(PHP_EOL, $contenu); 
+		fclose($fichier);		 
+		
+		 $param = stripslashes(urldecode($contenu[$id]));
+		$client = unserialize ($param); //on désérialise l'objet pour le récupérer en tant qu'objet
+
+       
+    }
+
+//on ouvre un session
 session_start();
 
 
 if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["connecter"]) ) {
-  // recherche de l'utilisateur : dans fichier info.txt
-
+	
+  // Si l'utilisateur a bien rempli tous les champs, on recherche l'utilisateur : dans fichier info.txt
 
 	$fichier = @fopen("Fichiers/info.txt", "r");
 	$found=false;
-
+	
 	if ($fichier) {
 		while ( (($buffer = fgets($fichier)) !== false) && (!$found) ) {
 			$champ=explode(" ",$buffer);
 			if (($champ[0]==$_POST ["pseudo"]) && ( $champ[1]==$_POST ["mdp"]))
 			{
 				$found=true;
+				$id=$champ[2];
 			}
-
+				
 		}
 		fclose($fichier);
 	}
+	
 
-
-  if ( $found )
- //après avoir vérifié que l'utilisateur peut se connecter, je garde les informations
+  if ( $found ) 
+ //après avoir vérifié que l'utilisateur peut se connecter car il existe, je garde les informations
  //que je vais utiliser dans les autres pages dans l'array  $_SESSION
-   {
-	   // !!!!! créer un client en chargaeant ses données (recupereInfo())
+   { 
+	   // créer un client en chargaeant ses données enregistrées
+	   recupererInfos();
 	 $_SESSION["client"] = $client;
+	 //on se redirige vers la page principale du site
 	 header("Location: ./pagePrincipale.html");
-	 //On crée une instance de Boulangerie
-	 //$boulangerie = new Boulangerie();
    }
-    // header ("Location ...") rédirige le navigateur vers la page indiquée à partir du script
-  else {
+    
+  else {	//si l'utilisateur n'est pas reconnu dans le fichier on affiche le message suivant et on reste sur le page active
 		echo '<script language="JavaScript">
 			alert("Votre pseudo ou votre mot de passe est incorrect");
 			window.location.replace("page_connexion.html");
 			</script>';
-
-		}
+			
+		} 
 }
-  else
-  	  {
+  else 
+  	  {//si l'utilisateur n'a pas rempli tous les champs alors on affiche le message suivant à l'écran et on reste sur la page active
 		  echo '<script language="JavaScript">
 			alert("Votre pseudo ou votre mot de passe n est pas renseigné");
 			window.location.replace("page_connexion.html");
