@@ -8,7 +8,7 @@
 		<?php
 			//require("Client.class.php");
 			require("Panier.class.php");
-			require("Boulangerie.class.php");
+			//require("Boulangerie.class.php");
 			session_start();
 			$panier = $_SESSION['panier'];
 			//$client = $_SESSION['client'];
