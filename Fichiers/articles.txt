@@ -52,4 +52,3 @@ chocolat love noir;0;images/image29;chocolat
 chocolat love au lait;0;images/image30;chocolat
 chocolat love blanc;0;images/image31;chocolat
 fèves de cacao;0;images/image32;chocolat
-
