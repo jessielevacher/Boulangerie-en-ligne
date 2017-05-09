@@ -6,8 +6,9 @@
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
-			require("Client.class.php");
+			//require("Client.class.php");
 			require("Panier.class.php");
+			//require("Boulangerie.class.php");
 			session_start();
 			$panier = $_SESSION['panier'];
 			//$client = $_SESSION['client'];
@@ -38,8 +39,8 @@
 	<br/>
 	<a href="pagePrincipale.php"> <input type="button" value="Retour"> </a>
 
-	<input type="submit" name="actionG" value="Valider"/>
-	<input type="submit" name="effacerG" value="Effacer"/>
+	<input class = "bouton" type="reset" name="actionG" value="Valider"/>
+	<input class = "bouton" type="reset" name="effacerG" value="Effacer"/>
 	</div>
 </form>
 

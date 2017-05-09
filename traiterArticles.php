@@ -6,6 +6,11 @@
   //$client = $_SESSION['client'];
 
   if (isset ($_POST ["action"])) {
+	  if(isset($_POST["actionG"])){
+		  for($i=0,$i<=18,$i++){
+			  ajouterArticle($i,$_GET['quantite'.strval($i)])
+		  }
+	  }
 
   } else {
       if (isset ($_POST ["effacerP"]) {
