@@ -17,7 +17,7 @@
 				<a href="page_connexion.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
 				<!-- Bouton à modifier selon ce qu'a fait Léa -->
 				<h1> Boulangerie "Les 5 gourmandes" </h1>
-	    	<h2> Bienvenue sur la page des Gâteaux </h2>
+	    	<h2> Bienvenue sur la page des Gâteaux. </h2>
 			</header>
 
 			<?php
@@ -28,17 +28,35 @@
 			<div class="centrage">
 				<table class="panier">
 					<tr class="panier">
-						<th class="panier">Nos Gâteaux</th>
+						<th class="panier">Nos Grands Gâteaux</th>
 						<th class="panier">Prix</th>
 						<th class="panier">Quantité</th>
 					</tr>
 
 					<?php
-						$boulangerie->AfficherCategorie(0,18);
+						$boulangerie->AfficherCategorie(0,6);
+						$boulangerie->AfficherCategorie(14,18);
 					?>
 
 				</table>
+
 				<br/>
+
+				<table class="panier">
+					<tr class="panier">
+						<th class="panier">Nos Petits Gâteaux</th>
+						<th class="panier">Prix</th>
+						<th class="panier">Quantité</th>
+					</tr>
+
+					<?php
+						$boulangerie->AfficherCategorie(6,14);
+					?>
+
+				</table>
+
+					<br/>
+
 
 				<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
 
