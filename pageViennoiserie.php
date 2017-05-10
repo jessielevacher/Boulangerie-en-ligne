@@ -17,8 +17,7 @@
 		<h2> Bienvenue sur la page des pains et viennoiseries. </h2>
 		</header>
 
-	<?php //On remplit la listeArticles avec le fichier comme dans la classe Panier
-	 //protected $listeArticles;
+	<?php 
 	  $i = 0;
 	  $fichier = fopen ("Fichiers/articles.txt", "r");
 	  while (! feof ($fichier)) {

@@ -11,7 +11,7 @@
 	</head>
 <body class="chocolat">
 		<header id="top">
-			<a href="pagePrincipale.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
+			<a href="page_connexion.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
     <h2>Bienvenue sur la page des chocolats.</h2>
 		</header>
