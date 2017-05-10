@@ -24,7 +24,7 @@
 	 			$boulangerie = new Boulangerie();
 	    ?>
 
-		<form action="test2.php" method="POST">
+		<form action="traiterArticles.php" method="POST">
 			<div class="centrage">
 				<table class="panier">
 					<tr class="panier">
