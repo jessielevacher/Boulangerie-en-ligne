@@ -163,6 +163,7 @@ margin-right:10px;
   width: 300px;
   height: 50px;
   text-decoration-style: none;
+  text-decoration: none;
 }
 .section_produit{
   margin-top: 100px;
@@ -176,9 +177,6 @@ margin-right:10px;
 .images_produit{
   border : 10px #C71585;
   border-style: double;
-}
-.bouton{
-  text-decoration: none;
 }
 #tableau{
 display: flex;
