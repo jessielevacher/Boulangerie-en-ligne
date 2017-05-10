@@ -19,7 +19,7 @@ date 1/05/2017 -->
     protected $panier;
     protected $id;
 
-    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo,$iD) {
+    public function __construct($nom, $prenom, $dateNaissance, $adresse, $CP, $ville, $sexe, $telephone, $pseudo, $iD) {
   		$this->nom = $nom;
   		$this->prenom = $prenom;
   		$this->dateNaissance = $dateNaissance;
@@ -30,13 +30,13 @@ date 1/05/2017 -->
   		$this->telephone = $telephone;
   		$this->pseudo = $pseudo;
   		$this->listeCommandes = array();
-  		/*$this->panier = new Panier();*/
-  		$this->id=$iD;
+  		$this->panier = new Panier();
+  		$this->id = $iD;
     }
 
     public function __destruct() {}
 
-	// Getteurs //
+	  // Getteurs //
     public function getPrenom() {
         return $this->prenom;
     }
@@ -86,23 +86,23 @@ date 1/05/2017 -->
     }
 
 	// Autres méthodes //
-	
-	//Enregistre le pseudo mot de passe et id du client sur le fichier info.txt prévu à cet effet
+
+	 //Enregistre le pseudo mot de passe et id du client sur le fichier info.txt prévu à cet effet
    public function enregistrerInfos($mdp) {
       $fichier = @fopen("Fichiers/info.txt", "a+");
       fputs($fichier, $this->pseudo." ".$mdp." ".$this->id." \n");
       fclose($fichier);
     }
 
-	//enregistre le client en tant qu'objet (serialisation) dans le fichier clients.txt
+	  //enregistre le client en tant qu'objet (serialisation) dans le fichier clients.txt
     public function enregistrerInfosComplementaires() {
-		
+
 		//Si le fichier est vide, on l'enregistre sur la première ligne venue
       if (filesize("Fichiers/clients.txt")==0) {
         $fichier = @fopen("Fichiers/clients.txt", "a+");
       	$a=serialize($this);
-		$param = urlencode($a);
-		fwrite($fichier,$param);
+		    $param = urlencode($a);
+		    fwrite($fichier,$param);
       	fclose($fichier);
       }
       else { //sinon on l'enregistre sur la ligne correspondant à son ID, ce qui efface la version précédente si il y en avait une
@@ -110,17 +110,17 @@ date 1/05/2017 -->
 		    $contenu = fread($fichier, filesize("Fichiers/clients.txt"));
 		    $contenu = explode(PHP_EOL, $contenu); //on le divise selon les sauts à la ligne
         fclose($fichier);
-       $i=$this->id;
-		$a=serialize($this);
-		$param=urlencode($a); //on serialise l'objet
-		$contenu[$i]=$param; //on le met à la bonne place
+        $i=$this->id;
+		    $a=serialize($this);
+		    $param=urlencode($a); //on serialise l'objet
+		    $contenu[$i]=$param; //on le met à la bonne place
 
 			  $contenu = implode(PHP_EOL, $contenu);
         $fichier = @fopen("Fichiers/clients.txt", "w"); //on reécrit le fichier
 		    fwrite($fichier, $contenu);
         fclose($fichier);
       }
-  }
+    }
 
 
     public function afficherArticlesCommande($i) {

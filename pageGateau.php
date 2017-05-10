@@ -1,59 +1,51 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Page des gateaux</title>
+		<title>Page des gâteaux</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<link href="CSS/style.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css">
 		<?php
-		  require("Article.class.php");
+		  require("Boulangerie.class.php");
+			session_start();
+			$client = $_SESSION['client'];
 		?>
 	</head>
-<body class="chocolat">
-		<header id="top">
-			<a href="page_connexion.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
-		<h1> Boulangerie "Les cinq gourmandes" </h1>
-    <h2>Bienvenue sur la page des Gâteaux.</h2>
-		</header>
-<?php
-  $i = 0;
-      $fichier = fopen ("Fichiers/articles.txt", "r");
-    	while (! feof ($fichier)) {
-    		$c = fgets ($fichier);
-        $Champ = explode(";",$c);
-        $article = new Article($Champ[0],intval($Champ[1]),$Champ[2],floatval($Champ[3]));
-    	$listeArticles[$i] = $article;
-        $i = $i + 1;
-      }
-      fclose ($fichier);
-      ?>
-<form action="traiterArticles.php" method="POST">
-	<div class="centrage">
-	<table class="panier">
-		<tr class="panier">
-			<th class="panier">Nos Gâteaux</th>
-			<th class="panier">Prix</th>
-			<th class="panier">Quantité</th>
-		</tr>
-		<?php
-			for ($i=0; $i < 18; $i++) {
-          echo "<tr class=\"panier\">";
-          echo "<td class=\"panier\">".$listeArticles[$i]->getNom()."</td>";
-          $prix = $listeArticles[$i]->getPrix();
-          echo "<td class=\"panier\">".$prix."€</td>";
-          echo  "<td class=\"panier\"><input type=\"number\" name=\"quantite".strval($i)."\" min=\"0\" max=\"50\" defaultValue=\"0\"></td>";
-          echo "</tr>";
-    }
-		?>
 
-	</table>
-	<br/>
-	<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
+	<body class="chocolat">
+			<header id="top">
+				<a href="page_connexion.html" id="logo"> <input type="button" value="Se déconnecter"> </a>
+				<!-- Bouton à modifier selon ce qu'a fait Léa -->
+				<h1> Boulangerie "Les 5 gourmandes" </h1>
+	    	<h2> Bienvenue sur la page des Gâteaux </h2>
+			</header>
 
-	<input type="submit" name="actionG" value="Valider"/>
-	<input type="reset" name="effacerG" value="Effacer"/>
-	</div>
-</form>
-</body>
+			<?php
+	 			$boulangerie = new Boulangerie();
+	    ?>
+
+		<form action="test2.php" method="POST">
+			<div class="centrage">
+				<table class="panier">
+					<tr class="panier">
+						<th class="panier">Nos Gâteaux</th>
+						<th class="panier">Prix</th>
+						<th class="panier">Quantité</th>
+					</tr>
+
+					<?php
+						$boulangerie->AfficherCategorie(0,18);
+					?>
+
+				</table>
+				<br/>
+
+				<a href="pagePrincipale.html"> <input type="button" value="Retour"> </a>
+
+				<input type="submit" name="actionG" value="Valider"/>
+				<input type="reset" name="effacerG" value="Effacer"/>
+			</div>
+		</form>
+	</body>
 
 </html>

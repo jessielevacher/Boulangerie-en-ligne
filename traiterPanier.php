@@ -33,7 +33,7 @@ date 1/05/2017 -->
     }
 
   } else { //=on n'a pas appuyé sur "Commander"
-    for ($i=0; $i < count($client->getPanier()->getListeArticles()); $i++) {
+    for ($i = 0; $i < count($client->getPanier()->getListeArticles()); $i++) {
       if(isset ($_POST [strval($i)])) {
         $client->getPanier()->supprimerArticle($i);
         header("location:panier.php");
