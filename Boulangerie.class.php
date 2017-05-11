@@ -20,7 +20,8 @@ date 1/05/2017 -->
       }
       fclose ($fichier);
     }
-
+ 
+	  // On lit les noms et les prix des articles depuis le fichier texte d'un indice de début à un indice de fin et on les affiche */
     public function AfficherCategorie($debut, $fin) {
       for ($i = $debut; $i < $fin; $i++) {
 					echo "<tr class=\"panier\">";
