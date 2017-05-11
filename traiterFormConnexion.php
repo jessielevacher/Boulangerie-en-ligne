@@ -33,6 +33,7 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
 	if ($fichier) {
 		while ( (($buffer = fgets($fichier)) !== false) && (!$found) ) {
 			$champ=explode(" ",$buffer);
+			//nous vérifions la cohérence du pseudo entré avec le mot de passe (traité avec un fonction de hashage)
 			if (($champ[0]==$_POST ["pseudo"]) && password_verify($_POST ["mdp"],$champ[1])) 
 			{
 				$found=true;

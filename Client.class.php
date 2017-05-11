@@ -90,7 +90,7 @@ date 1/05/2017 -->
 	 //Enregistre le pseudo mot de passe et id du client sur le fichier info.txt prévu à cet effet
    public function enregistrerInfos($mdp) {
       $fichier = @fopen("Fichiers/info.txt", "a+");
-      fputs($fichier, $this->pseudo." ".password_hash($mdp, PASSWORD_DEFAULT)." ".$this->id."\n"); //$mdp
+      fputs($fichier, $this->pseudo." ".password_hash($mdp, PASSWORD_DEFAULT)." ".$this->id."\n"); //mot de passe crypté pour qu'il ne soit pas lisible dans le fichier texte
       fclose($fichier);
     }
 
