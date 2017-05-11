@@ -17,7 +17,7 @@ date 29/04/2017 -->
 
 	<body class="panier">
 		<header id="top">
-			<a href="deconnexion.php" id="logo"> <input type="button" value="Déconnexion"> </a>
+			<form action="deconnexion.php" method="POST"> <input class="bouton" type="submit" value="Se déconnecter"> </form>
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
 		</header>
 

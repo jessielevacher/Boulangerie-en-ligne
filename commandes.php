@@ -24,7 +24,7 @@ date 1/05/2017 -->
 				<tr>
 					<th><a href="pagePrincipale.html" class="bouton"> <input class="bouton" type="button" value="Les produits"></th>
 					<th><a href="panier.php" class="bouton"> <input class="bouton" type="button" value="Mon panier"></th>
-					<th><input class="bouton" type="submit" value="Se déconnecter"> </th>
+					<th><form action="deconnexion.php" method="POST"> <input class="bouton" type="submit" value="Se déconnecter"> </form></th>
 				</tr>
 			</table>
 			</form>
