@@ -40,7 +40,7 @@ date 1/05/2017 -->
 			</tr>
 
 			<?php
-				echo $client->getPseudo();
+				
 				$client->afficherCommandes();
 			?>
 		</table>
