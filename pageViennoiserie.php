@@ -35,6 +35,7 @@
 
 						<?php
 							$boulangerie->AfficherCategorie(18,28);
+						/* On affiche les articles du ficher correspondant aux viennoiseries (du 18eme au 28eme) */
 						?>
 
 					</table>
@@ -50,6 +51,7 @@
 
 					<?php
 						$boulangerie->AfficherCategorie(28,36);
+					/* On affiche les articles du fichier d'articles correspondant aux pains*/
 					?>
 
 				</table>
