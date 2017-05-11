@@ -15,13 +15,12 @@
 	<body class="chocolat">
 			<header id="top">
 				<form action="deconnexion.php" method="POST"> <input class="bouton" type="submit" value="Se déconnecter"> </form>
-				<!-- Bouton à modifier selon ce qu'a fait Léa -->
 				<h1> Boulangerie "Les 5 gourmandes" </h1>
 	    	<h2> Bienvenue sur la page des Gâteaux. </h2>
 			</header>
 
 			<?php
-	 			$boulangerie = new Boulangerie();
+	 			$boulangerie = new Boulangerie(); //on crée une instance de Boulangerie
 	    ?>
 
 		<form action="traiterArticles.php" method="POST">
@@ -36,6 +35,7 @@
 					<?php
 						$boulangerie->AfficherCategorie(0,6);
 						$boulangerie->AfficherCategorie(14,18);
+					/* On affiche les éléments du fichier d'articles correspondant aux grands gâteaux et aux tartes*/
 					?>
 
 				</table>
@@ -51,6 +51,7 @@
 
 					<?php
 						$boulangerie->AfficherCategorie(6,14);
+					/* On affiche les articles du fichier d'articles correspondant aux petits gâteaux */
 					?>
 
 				</table>
