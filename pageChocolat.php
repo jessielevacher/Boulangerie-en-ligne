@@ -35,6 +35,7 @@
 
 					<?php
 						$boulangerie->AfficherCategorie(36,54);
+					/* On affiche les éléments du ficher d'articles correspondant aux chocolats (du 36eme aux 54eme) */
 					?>
 
 				</table>
