@@ -33,7 +33,7 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
 	if ($fichier) {
 		while ( (($buffer = fgets($fichier)) !== false) && (!$found) ) {
 			$champ=explode(" ",$buffer);
-			if (($champ[0]==$_POST ["pseudo"]) && password_verify($_POST ["mdp"],$champ[1])) //$champ[1]==$_POST ["mdp"]
+			if (($champ[0]==$_POST ["pseudo"]) && password_verify($_POST ["mdp"],$champ[1])) 
 			{
 				$found=true;
 				$id=$champ[2];
