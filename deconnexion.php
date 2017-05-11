@@ -9,7 +9,7 @@ require("Client.class.php");
 session_start();
 $client=$_SESSION["client"] ;
 $client->enregistrerInfosComplementaires();
-$client->__destruct();
+//$client->__destruct();
 
 //puis on ferme la session
 session_destroy();

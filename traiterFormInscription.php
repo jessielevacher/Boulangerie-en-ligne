@@ -41,12 +41,12 @@ function pseudoUtilise()
 session_start();
 
 //vérification des expressions régulières
-$telOK=preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $_POST['telephone']); //numéro de téléphone 
-$cpOK=preg_match("#^[0-9]{5}$#", $_POST['cp']);
-$jourOK=preg_match("#^([0-2]?[0-9])|(3[0-1])$#", $_POST['jour']) ;
-$moisOK=preg_match("#^0?[1-9]|1[0-2]$#", $_POST['mois']) ;
-$anneeOK=preg_match("#^19[0-9][0-9]|200[0-9]|201[0-7]$#", $_POST['annee']);
-$mdpOK=(preg_match("#[0-9]#", $_POST['mdp']) && preg_match("#([[:alnum:]]|[[:digit:]]){8,}#", $_POST['mdp']));
+$telOK=preg_match("#^0[1-68]([-. ]?[0-9]{2}){4}$#", $_POST['telephone']); //Un numéro de téléphone valide contient 5 binôme de 2 chiffres qui peuvent être séparé par un "-", un espace ou un point ou pas séparé du tout
+$cpOK=preg_match("#^[0-9]{5}$#", $_POST['cp']); //un code postal valide contient uniquement 5 chiffre
+$jourOK=preg_match("#^([0-2]?[0-9])|(3[0-1])$#", $_POST['jour']) ; //un jour valide est compris entre 01 et 31 ou 1 et 31
+$moisOK=preg_match("#^0?[1-9]|1[0-2]$#", $_POST['mois']) ; //un mois valide est compris entre 01 et 12 ou 1 et 12
+$anneeOK=preg_match("#^19[0-9][0-9]|200[0-9]|201[0-7]$#", $_POST['annee']); //une année de naissance valide est comprise entre 1900 et 2017 (aujourd'hui)
+$mdpOK=(preg_match("#[0-9]#", $_POST['mdp']) && preg_match("#([[:alnum:]]|[[:punct:]]){8,}#", $_POST['mdp'])); //un mot de passe valide contient au moins 8 caractères et un chiffre ( par caractères nous entendons, lettres, chiffres et ponctuation)
 
 
 //si toutes les expressions régulières sont vérifiées et qu'aucun champs n'est vide alors on peut créer le client

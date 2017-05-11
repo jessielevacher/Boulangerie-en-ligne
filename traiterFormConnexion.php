@@ -5,7 +5,7 @@ date 1/05/2017 -->
 
 require("Client.class.php");
 
-  function recupererInfos(){ //on récuère la ligne du fichier clients.txt correspondant à l'id du client qui souhaite se connecter
+  function recupererInfos($id){ //on récupère la ligne du fichier clients.txt correspondant à l'id du client qui souhaite se connecter
 		
 		$fichier = @fopen("Fichiers/clients.txt", "r+");		   
 		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
@@ -15,6 +15,7 @@ require("Client.class.php");
 		 $param = stripslashes(urldecode($contenu[$id]));
 		$client = unserialize ($param); //on désérialise l'objet pour le récupérer en tant qu'objet
 
+	return $client;
        
     }
 
@@ -48,7 +49,7 @@ if ( !empty ( $_POST ["pseudo"]) && !empty ( $_POST ["mdp"]) && isset( $_POST["c
  //que je vais utiliser dans les autres pages dans l'array  $_SESSION
    { 
 	   // créer un client en chargaeant ses données enregistrées
-	   recupererInfos();
+	   $client=recupererInfos($id);
 	 $_SESSION["client"] = $client;
 	 //on se redirige vers la page principale du site
 	 header("Location: ./pagePrincipale.html");
