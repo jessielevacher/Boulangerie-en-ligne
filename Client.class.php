@@ -113,7 +113,7 @@ date 1/05/2017 -->
         $i=$this->id;
 		    $a=serialize($this);
 		    $param=urlencode($a); //on serialise l'objet
-		    $contenu[$i]=$param; //on le met à la bonne place
+		    $contenu[$i-1]=$param; //on le met à la bonne place
 
 			  $contenu = implode(PHP_EOL, $contenu);
         $fichier = @fopen("Fichiers/clients.txt", "w"); //on reécrit le fichier

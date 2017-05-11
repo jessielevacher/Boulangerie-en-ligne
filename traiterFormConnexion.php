@@ -9,10 +9,10 @@ require("Client.class.php");
 		
 		$fichier = @fopen("Fichiers/clients.txt", "r+");		   
 		$contenu = fread($fichier, filesize("Fichiers/clients.txt"));
-		$contenu = explode(PHP_EOL, $contenu); 
+		$contenu = explode("\n", $contenu); 
 		fclose($fichier);		 
 		
-		 $param = stripslashes(urldecode($contenu[$id]));
+		 $param = stripslashes(urldecode($contenu[$id-1]));
 		$client = unserialize ($param); //on désérialise l'objet pour le récupérer en tant qu'objet
 
 	return $client;
