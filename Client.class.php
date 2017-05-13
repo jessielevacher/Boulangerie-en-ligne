@@ -85,19 +85,19 @@ date 1/05/2017 -->
       return $this->id;
     }
 
-	// Autres méthodes //
+   // Autres méthodes //
 
-	 //Enregistre le pseudo mot de passe et id du client sur le fichier info.txt prévu à cet effet
+	 //Enregistre le pseudo, le mot de passe et id du client sur le fichier info.txt prévu à cet effet
    public function enregistrerInfos($mdp) {
       $fichier = @fopen("Fichiers/info.txt", "a+");
-      fputs($fichier, $this->pseudo." ".password_hash($mdp, PASSWORD_DEFAULT)." ".$this->id."\n"); //mot de passe crypté pour qu'il ne soit pas lisible dans le fichier texte
+      //mot de passe crypté pour qu'il ne soit pas lisible dans le fichier texte
+      fputs($fichier, $this->pseudo." ".password_hash($mdp, PASSWORD_DEFAULT)." ".$this->id."\n");
       fclose($fichier);
     }
 
-	  //enregistre le client en tant qu'objet (serialisation) dans le fichier clients.txt
+	  //Enregistre le client en tant qu'objet (sérialisation) dans le fichier clients.txt
     public function enregistrerInfosComplementaires() {
-
-		//Si le fichier est vide, on l'enregistre sur la première ligne venue
+		  //Si le fichier est vide, on l'enregistre sur la première ligne venue
       if (filesize("Fichiers/clients.txt")==0) {
         $fichier = @fopen("Fichiers/clients.txt", "a+");
       	$a=serialize($this);
@@ -122,11 +122,11 @@ date 1/05/2017 -->
       }
     }
 
-
+    //On retourne une chaine de caractères contenant les quantités et les articles présents dans UNE commande
     public function afficherArticlesCommande($i) {
       $chaine = "";
       for ($j = 0; $j < count($this->listeCommandes[$i]->getListeArticlesCommandes()) ; $j++) {
-        $chaine=$chaine.$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
+        $chaine = $chaine.$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getQuantite()." ".$this->listeCommandes[$i]->getListeArticlesCommandes()[$j]->getNom()."<br/>";
       }
       return $chaine;
     }
@@ -149,7 +149,5 @@ date 1/05/2017 -->
     public function ajouterCommande($commande) {
       $this->listeCommandes[count($this->listeCommandes)] = $commande;
     }
-
-
 }
 ?>

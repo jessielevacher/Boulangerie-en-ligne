@@ -1,3 +1,6 @@
+<!-- author Jessie, Laetitia, Marème, Yuxin
+date 2/05/2017 -->
+
 <!DOCTYPE html>
 <html>
 	<head>

@@ -19,7 +19,7 @@ date 1/05/2017 -->
 		<h1> Boulangerie "Les 5 gourmandes" </h1>
 
 		<div id="tableau">
-			
+
 			<table>
 				<tr>
 					<th><a href="pagePrincipale.html" class="bouton"> <input class="bouton" type="button" value="Les produits"></th>
@@ -27,7 +27,7 @@ date 1/05/2017 -->
 					<th><form action="deconnexion.php" method="POST"> <input class="bouton" type="submit" value="Se déconnecter"> </form></th>
 				</tr>
 			</table>
-			
+
 		</div>
 
 		<h2> Mes commandes </h2>
@@ -39,8 +39,7 @@ date 1/05/2017 -->
 				<th class="panier">Total</th>
 			</tr>
 
-			<?php
-				
+			<?php			
 				$client->afficherCommandes();
 			?>
 		</table>

@@ -1,3 +1,6 @@
+<!-- author Jessie, Laetitia, Marème, Yuxin
+date 2/05/2017 -->
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,7 +18,6 @@
 	<body class="chocolat">
 			<header id="top">
 				<form action="deconnexion.php" method="POST"> <input class="bouton" type="submit" value="Se déconnecter"> </form>
-				<!-- Bouton à modifier selon ce qu'a fait Léa -->
 				<h1> Boulangerie "Les 5 gourmandes" </h1>
 	    	<h2> Bienvenue sur la page des Chocolats </h2>
 			</header>
